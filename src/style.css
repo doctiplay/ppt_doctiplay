@@ -969,7 +969,8 @@ summary .pill-small {
 /* Pitch Deck Slides - Layout Correction */
 .pitch-slide {
   justify-content: center !important;
-  padding-top: 125px !important;
+  padding-top: 115px !important;
+  /* Slightly more room for bottom content */
 }
 
 .ultra-title {
@@ -1000,10 +1001,8 @@ summary .pill-small {
   display: flex;
   flex-direction: column;
   padding: 24px 32px !important;
-  /* Tighter vertical padding */
-  height: 310px;
-  /* Further reduced from 350px/400px to ensure margins */
-  /* Ensures safety margins on smaller heights */
+  height: 340px;
+  /* Adjusted to fit all text securely */
   justify-content: flex-start;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -1019,7 +1018,8 @@ summary .pill-small {
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  /* Reduced to gain vertical space */
   width: fit-content;
 }
 
@@ -1038,7 +1038,8 @@ summary .pill-small {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
+  /* Tighter gap to help text fit */
   max-width: 360px;
 }
 
