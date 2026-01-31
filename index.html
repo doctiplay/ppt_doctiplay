@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doctiplay | Présentation (PPT Scroll)</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="brand" title="Doctiplay">
+      <div class="brand-dot"></div>
+      <span>Doctiplay</span>
+    </div>
+
+    <nav class="nav" aria-label="Navigation">
+      <a href="#slide-2">Problème</a>
+      <a href="#slide-3">Solution</a>
+      <a href="#slide-7">KPI</a>
+      <a href="#slide-10">Pilote</a>
+      <a href="#slide-12">Next</a>
+    </nav>
+
+    <div class="top-actions">
+      <a class="btn btn-ghost"
+        href="mailto:contact@doctiplay.com?subject=Demande%20de%20d%C3%A9mo%20Doctiplay&body=Bonjour%2C%0A%0AJe%20souhaite%20planifier%20une%20d%C3%A9mo%20Doctiplay.%0A%0AContexte%20%3A%20%5Bcentre%2F%C3%A9quipe%5D%0AObjectifs%20%3A%20%5Bex%20urgence%2C%20SMUR%2C%20IFSI%2FIFAS%5D%0ADisponibilit%C3%A9s%20%3A%20%5Bcr%C3%A9neaux%5D%0A%0ABien%20cordialement%2C"
+        aria-label="Demander une démo">Demander une démo</a>
+      <a class="btn btn-outline" href="/doctiplay.pdf" aria-label="Télécharger le PDF">Télécharger le PDF</a>
+    </div>
+  </div>
+
+  <div class="progress-bar" aria-hidden="true">
+    <div class="progress-fill" id="indicator"></div>
+  </div>
+
+  <div class="snap-container" id="main">
+
+    <!-- SLIDE 1: PITCH DECK STYLE -->
+    <section id="slide-1">
+      <div class="deck-top">
+        <div class="deck-badge-left">pitch deck 2026</div>
+        <div class="pill">✦ simulation médicale IA</div>
+      </div>
+
+      <div class="inner center">
+        <div class="reveal centered-hero">
+          <h1 class="hero-title">DOCTIPLAY</h1>
+        </div>
+
+        <p class="subtitle reveal centered-subtitle">
+          Simulations cliniques hautes fidélité pour entraînement la décision en urgence
+        </p>
+
+        <div class="hero-visual reveal">
+          <img
+            src="/Users/waelsmali/.gemini/antigravity/brain/fb620159-4bdc-4ee6-a039-2be387a933e2/doctiplay_hero_tablet_1769851180555.png"
+            alt="Doctiplay Tablet Interface" class="floating-tablet">
+        </div>
+
+        <div class="btn-group reveal" style="margin-top: 40px;">
+          <a href="#slide-2" class="btn btn-primary">Découvrir le projet</a>
+          <a href="mailto:contact@doctiplay.com" class="btn btn-outline">Réserver une démo</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SLIDE 2: THE CHALLENGE -->
+    <section id="slide-2" class="pitch-slide">
+      <div class="inner">
+        <h2 class="reveal ultra-title">Pourquoi généraliser la simulation ?</h2>
+        <p class="subtitle reveal single-line">
+          La haute fidélité est essentielle — mais la <span class="teal-highlight">fréquence</span>, la <span
+            class="teal-highlight">répétition</span> et la <span class="teal-highlight">mesure</span> restent limitées.
+        </p>
+
+        <div class="card-grid reveal deck-cards">
+          <!-- CARD LEFT -->
+          <div class="card col-6 horizontal-card">
+            <div class="tag-capsule">CONSTAT TERRAIN</div>
+            <h3>Contraintes opérationnelles</h3>
+            <ul class="deck-list">
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Accès limité aux plateaux (temps, salles, matériel, encadrement)</span>
+              </li>
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Logistique lourde → difficile de multiplier des formats courts</span>
+              </li>
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Difficile de rejouer les cas rares autant que nécessaire</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- CARD RIGHT -->
+          <div class="card col-6 horizontal-card">
+            <div class="tag-capsule">ENJEU PÉDAGOGIQUE</div>
+            <h3>Répéter & objectiver</h3>
+            <ul class="deck-list">
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Difficile d’objectiver la progression d’une session à l’autre</span>
+              </li>
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Besoin d’indicateurs simples sur décision / raisonnement (avant-après)</span>
+              </li>
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Micro-simus utiles entre deux sessions haute fidélité</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="deck-footer-note reveal">
+          Objectif : rendre la simulation plus <span class="teal-highlight">fréquente</span>, <span
+            class="teal-highlight">répétable</span> et <span class="teal-highlight">mesurable</span> — sans alourdir la
+          logistique.
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3 -->
+    <section id="slide-3">
+      <div class="inner">
+        <h2 class="reveal">Doctiplay</h2>
+        <p class="subtitle reveal">
+          Une simulation clinique immersive orientée <strong>raisonnement</strong> et <strong>prise de
+            décision</strong>, conçue pour compléter la simulation présentielle.
+          <br><span class="muted">Doctiplay n’est pas un simulateur procédural : il cible les choix cliniques, la
+            priorisation et la communication.</span>
+        </p>
+
+        <div class="card-grid reveal">
+          <div class="card col-3">
+            <span class="tag">Raisonnement</span>
+            <p>Hypothèses, priorisation, logique clinique en contexte contraint.</p>
+          </div>
+          <div class="card col-3">
+            <span class="tag">Décision</span>
+            <p>Choix clés, erreurs critiques, timing des décisions.</p>
+          </div>
+          <div class="card col-3">
+            <span class="tag">Communication</span>
+            <p>Transmission, coordination, annonces, gestion équipe/patient.</p>
+          </div>
+          <div class="card col-3">
+            <span class="tag">Débrief</span>
+            <p>Débrief structuré : points forts, axes d’amélioration, recommandations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 4 -->
+    <section id="slide-4">
+      <div class="inner">
+        <h2 class="reveal">Le parcours apprenant</h2>
+        <p class="subtitle reveal">Un flux simple, pensé pour être rejouable, exploitable en individuel ou en petit
+          groupe.</p>
+
+        <div class="flow-container reveal">
+          <svg viewBox="0 0 1000 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
+            aria-label="Parcours apprenant Doctiplay">
+            <defs>
+              <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#00f2ff" stop-opacity="0.85" />
+                <stop offset="1" stop-color="#1b5cff" stop-opacity="0.65" />
+              </linearGradient>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="6" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            <path d="M80 80H920" stroke="url(#g)" stroke-width="3" stroke-dasharray="10 10" filter="url(#glow)" />
+            <g font-family="Inter" font-size="14" fill="rgba(255,255,255,0.9)">
+              <circle cx="80" cy="80" r="12" fill="#00f2ff" filter="url(#glow)" />
+              <text x="80" y="125" text-anchor="middle">Choix du scénario</text>
+
+              <circle cx="290" cy="80" r="12" fill="#00f2ff" filter="url(#glow)" />
+              <text x="290" y="125" text-anchor="middle">Briefing</text>
+
+              <circle cx="500" cy="80" r="12" fill="#00f2ff" filter="url(#glow)" />
+              <text x="500" y="125" text-anchor="middle">Simulation interactive</text>
+
+              <circle cx="710" cy="80" r="12" fill="#00f2ff" filter="url(#glow)" />
+              <text x="710" y="125" text-anchor="middle">Feedback</text>
+
+              <circle cx="920" cy="80" r="12" fill="#00f2ff" filter="url(#glow)" />
+              <text x="920" y="125" text-anchor="middle">Débrief structuré</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="card-grid reveal" style="margin-top: 18px;">
+          <div class="card col-12">
+            <h3>Principe clé</h3>
+            <p>Chaque session peut être rejouée pour comparer les décisions dans le temps (progression) et standardiser
+              l’évaluation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 5 -->
+    <section id="slide-5">
+      <div class="inner">
+        <h2 class="reveal">Scénarios vitrine</h2>
+        <p class="subtitle reveal">Deux exemples de scénarios courts (10–15 min) orientés urgence, priorisation et
+          communication.</p>
+
+        <div class="card-grid reveal">
+          <div class="card col-6">
+            <span class="tag">Urgence métabolique</span>
+            <h3>Acidocétose diabétique</h3>
+            <ul class="clean">
+              <li>Priorisation et protocole initial</li>
+              <li>Interprétation des données cliniques / biologiques</li>
+              <li>Décisions critiques & prévention des erreurs</li>
+            </ul>
+          </div>
+
+          <div class="card col-6">
+            <span class="tag">Traumatologie</span>
+            <h3>Polytraumatisme</h3>
+            <ul class="clean">
+              <li>Triage / priorisation en contexte saturé</li>
+              <li>Communication d’équipe & coordination</li>
+              <li>Gestion du stress et timing des décisions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 6 -->
+    <section id="slide-6">
+      <div class="inner">
+        <h2 class="reveal">Pour les centres de simulation</h2>
+        <p class="subtitle reveal">Un outil pour augmenter la fréquence d’entraînement et structurer la mesure, sans
+          remplacer la simulation haute fidélité.</p>
+
+        <div class="card-grid reveal">
+          <div class="card col-6">
+            <span class="tag">Pédagogie</span>
+            <ul class="clean">
+              <li>Standardisation des parcours et des critères d’évaluation</li>
+              <li>Débrief structuré et exploitable (axes d’amélioration clairs)</li>
+              <li>Répétabilité : mêmes cas rejoués, progression mesurable</li>
+            </ul>
+          </div>
+
+          <div class="card col-6">
+            <span class="tag">Déploiement</span>
+            <ul class="clean">
+              <li>Utilisable entre deux sessions présentiel (formats courts)</li>
+              <li>Individuel ou petit groupe, encadrement léger</li>
+              <li>Approche “banque de scénarios” (co-construction possible)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 7 -->
+    <section id="slide-7">
+      <div class="inner">
+        <h2 class="reveal">Protocole d’évaluation (KPI)</h2>
+        <p class="subtitle reveal">Des indicateurs simples, avant/après — adaptés aux pilotes et aux centres de
+          simulation.</p>
+
+        <div class="card-grid reveal">
+          <div class="card col-4">
+            <div class="kpi">
+              <div class="kpi-value">Avant / Après</div>
+              <div class="kpi-label">Score de décision clinique (raisonnement + priorisation)</div>
+            </div>
+          </div>
+          <div class="card col-4">
+            <div class="kpi">
+              <div class="kpi-value">↓</div>
+              <div class="kpi-label">Erreurs critiques (mauvaises décisions / oublis)</div>
+            </div>
+          </div>
+          <div class="card col-4">
+            <div class="kpi">
+              <div class="kpi-value">↓</div>
+              <div class="kpi-label">Temps pour initier la bonne prise en charge</div>
+            </div>
+          </div>
+
+          <div class="card col-6">
+            <span class="tag">Qualité du débrief</span>
+            <ul class="clean">
+              <li>Satisfaction / utilité perçue (NPS, note /10)</li>
+              <li>Clarté des axes d’amélioration et transfert en pratique</li>
+            </ul>
+          </div>
+          <div class="card col-6">
+            <span class="tag">Adoption & répétabilité</span>
+            <ul class="clean">
+              <li>Sessions par apprenant / mois</li>
+              <li>Taux de complétion & rejouabilité</li>
+              <li>Usage par filière (urgence, SMUR, IFSI/IFAS…)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 8 -->
+    <section id="slide-8">
+      <div class="inner">
+        <h2 class="reveal">Crédibilité & alignement pédagogique</h2>
+        <p class="subtitle reveal">Une approche conçue pour s’intégrer aux pratiques de simulation (scénarios,
+          objectifs, débrief, évaluation).</p>
+
+        <div class="card-grid reveal">
+          <div class="card col-12">
+            <ul class="clean">
+              <li>Déploiement pilote au <strong>CHU de Rabat</strong> (retours d’usage terrain)</li>
+              <li>Discussions avec des équipes <strong>CESU / SAMU</strong> en France pour cadrer un pilote</li>
+              <li>Approche alignée avec les logiques de <strong>scénarisation</strong> et <strong>débrief
+                  structuré</strong></li>
+            </ul>
+            <p class="muted" style="margin-top:10px;">(À personnaliser selon ton interlocuteur : filière, objectifs
+              pédagogiques, modalités.)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 9 -->
+    <section id="slide-9">
+      <div class="inner">
+        <h2 class="reveal">Conformité & sécurité</h2>
+        <p class="subtitle reveal">Cadre clair : formation, données minimisées, et gouvernance définie avec
+          l’établissement.</p>
+
+        <div class="card-grid reveal">
+          <div class="card col-6">
+            <span class="tag">RGPD & gouvernance</span>
+            <ul class="clean">
+              <li>Données minimisées (périmètre défini en amont du pilote)</li>
+              <li>NDA / DPA possibles selon les exigences</li>
+              <li>Gestion des accès (rôles) et traçabilité des usages</li>
+            </ul>
+          </div>
+
+          <div class="card col-6">
+            <span class="tag">Positionnement</span>
+            <ul class="clean">
+              <li>Outil de formation : pas d’aide au diagnostic ni de décision clinique réelle</li>
+              <li>Scénarios validés / ajustés avec experts selon le protocole pilote</li>
+              <li>Transparence sur les limites et objectifs pédagogiques</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 10 -->
+    <section id="slide-10">
+      <div class="inner">
+        <h2 class="reveal">Pilote proposé</h2>
+        <p class="subtitle reveal">Tester en conditions réelles, mesurer, itérer, puis décider d’un déploiement.</p>
+
+        <div class="card-grid reveal">
+          <div class="card col-7" style="border-color: rgba(0,242,255,0.28); box-shadow: var(--glow);">
+            <span class="tag">Scenario Day</span>
+            <h3>Une journée pour lancer vite (et propre)</h3>
+            <ul class="clean">
+              <li>Démo + cadrage pédagogique (objectifs, critères, population)</li>
+              <li>1–2 scénarios joués avec un groupe test</li>
+              <li>Débrief + ajustements + protocole KPI (avant/après)</li>
+              <li>Plan de test (période, volume, modalités d’encadrement)</li>
+            </ul>
+          </div>
+
+          <div class="card col-5">
+            <span class="tag">Pack pilote</span>
+            <ul class="clean">
+              <li>Accès plateforme + scénarios vitrine</li>
+              <li>Tableau de bord d’analyse pédagogique</li>
+              <li>Rapport de synthèse (KPI + retours terrain)</li>
+            </ul>
+            <div style="margin-top:16px; text-align:center;">
+              <div
+                style="font-family:'IBM Plex Mono', monospace; letter-spacing:0.10em; text-transform:uppercase; color:rgba(255,255,255,0.65); font-size:0.78rem;">
+                Prix cible pilote</div>
+              <div style="font-size:2rem; font-weight:900; color:rgba(255,255,255,0.95); margin-top:6px;">5 000 € HT
+              </div>
+              <div class="muted" style="margin-top:6px; font-size:0.95rem;">(ajustable selon périmètre / durée /
+                scénarios)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 11 -->
+    <section id="slide-11">
+      <div class="inner">
+        <h2 class="reveal">Roadmap 2025–2026</h2>
+        <p class="subtitle reveal">Priorité : qualité pédagogique, banque de scénarios, et déploiement multi-centres.
+        </p>
+
+        <div class="card-grid reveal">
+          <div class="card col-6">
+            <span class="tag">2025</span>
+            <ul class="clean">
+              <li>Pilotes France / Maroc (retours terrain + protocole KPI)</li>
+              <li>Banque de scénarios vitrine + co-construction avec centres partenaires</li>
+              <li>Amélioration UX (usage fluide, formats courts, rejouabilité)</li>
+            </ul>
+          </div>
+
+          <div class="card col-6">
+            <span class="tag">2026</span>
+            <ul class="clean">
+              <li>Industrialisation du déploiement (multi-sites, formation encadrants)</li>
+              <li>Catalogue scénarios par filière (urgence, SMUR, IFSI/IFAS…)</li>
+              <li>Renforcement des outils d’analyse pédagogique (débrief & progression)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 12 -->
+    <section id="slide-12">
+      <div class="inner center">
+        <h2 class="reveal">Prêt à tester Doctiplay dans votre centre&nbsp;?</h2>
+        <p class="subtitle reveal">Objectif : une démo rapide, puis un cadrage pilote clair — avec mesure avant/après.
+        </p>
+
+        <div class="btn-group reveal">
+          <a href="mailto:contact@doctiplay.com?subject=Demande%20de%20d%C3%A9mo%20Doctiplay&body=Bonjour%2C%0A%0AJe%20souhaite%20planifier%20une%20d%C3%A9mo%20Doctiplay.%0A%0AContexte%20%3A%20%5Bcentre%2F%C3%A9quipe%5D%0AObjectifs%20%3A%20%5Bex%20urgence%2C%20SMUR%2C%20IFSI%2FIFAS%5D%0ADisponibilit%C3%A9s%20%3A%20%5Bcr%C3%A9neaux%5D%0A%0ABien%20cordialement%2C"
+            class="btn btn-primary" aria-label="Demander une démo">
+            Demander une démo
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M4 4h16v16H4z" stroke="#06101f" stroke-width="2" />
+              <path d="M4 7l8 6 8-6" stroke="#06101f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a href="/doctiplay.pdf" class="btn btn-outline" aria-label="Télécharger la présentation PDF">
+            Télécharger le PDF
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 3v10" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" />
+              <path d="M8 11l4 4 4-4" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M5 21h14" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </a>
+        </div>
+
+        <p class="muted reveal" style="margin-top: 22px;">
+          1) Échange 20 min → 2) Démo personnalisée → 3) Cadrage pilote (Scenario Day) → 4) Rapport KPI
+        </p>
+      </div>
+    </section>
+
+    <!-- ANNEXES -->
+    <section class="appendix" id="appendix">
+      <div class="inner">
+        <h2 class="reveal">Annexes</h2>
+        <p class="subtitle reveal">À ouvrir si besoin — détails stratégiques, organisation, modèle économique et points
+          de vigilance.</p>
+
+        <details class="reveal">
+          <summary><span><span class="pill-small">Organisation</span> Organisation & gouvernance</span><span
+              class="muted">+</span></summary>
+          <div class="details-content">
+            <ul class="clean">
+              <li>Validation pédagogique : objectifs, critères, débrief, itérations sur les scénarios</li>
+              <li>Référents (selon pilotes) pour cadrer contenu et évaluation</li>
+              <li>Approche “centre-friendly” : co-construction et co-signature possible des scénarios</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="reveal">
+          <summary><span><span class="pill-small">Go-to-market</span> Stratégie de déploiement</span><span
+              class="muted">+</span></summary>
+          <div class="details-content">
+            <ul class="clean">
+              <li>Pilotes avec centres motivés → preuves d’efficacité pédagogique → diffusion réseau</li>
+              <li>Présence sur réseaux simulation (retours d’expérience + cas d’usage)</li>
+              <li>Positionnement : outil complémentaire, léger, orienté raisonnement & décision</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="reveal">
+          <summary><span><span class="pill-small">Business</span> Modèle économique (exemples)</span><span
+              class="muted">+</span></summary>
+          <div class="details-content">
+            <ul class="clean">
+              <li>Pilote (one-shot) : cadrage + test + rapport KPI</li>
+              <li>Licence centre / institution : accès + catalogue scénarios + analytics</li>
+              <li>Option co-construction : scénarios spécifiques / co-signés</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="reveal">
+          <summary><span><span class="pill-small">Vigilance</span> Risques & points de vigilance</span><span
+              class="muted">+</span></summary>
+          <div class="details-content">
+            <ul class="clean">
+              <li>Ne pas confondre “simulation pédagogique” et “aide clinique” (cadre clair)</li>
+              <li>Qualité des scénarios : itération avec experts + protocole d’évaluation</li>
+              <li>Déploiement : simplicité d’usage, accompagnement minimal mais présent</li>
+            </ul>
+          </div>
+        </details>
+
+        <div class="footer reveal">
+          Doctiplay — Présentation web (PPT scroll) • Un seul fichier HTML • Mode présentation : touche P
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
