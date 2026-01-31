@@ -9,10 +9,10 @@
   --card-border: rgba(0, 242, 255, 0.22);
   --glow: 0 0 28px rgba(0, 242, 255, 0.12);
   --glow-strong: 0 0 40px rgba(0, 242, 255, 0.20);
-  --radius-xl: 28px;
-  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-lg: 16px;
   --radius-pill: 999px;
-  --maxw: 1120px;
+  --maxw: 1000px;
 }
 
 * {
@@ -31,7 +31,8 @@ body {
   background: var(--bg-dark);
   color: var(--text-white);
   overflow-x: hidden;
-  line-height: 1.6;
+  line-height: 1.5;
+  font-size: 0.92rem;
 }
 
 /* Ambient background */
@@ -225,8 +226,8 @@ h2 {
 .subtitle {
   text-align: center;
   color: var(--text-gray);
-  font-size: 1.12rem;
-  max-width: 920px;
+  font-size: 1rem;
+  max-width: 800px;
   margin: 0 auto 20px;
 }
 
@@ -855,7 +856,7 @@ summary .pill-small {
 
 .hero-title {
   display: block;
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
   background: linear-gradient(135deg, #fff 0%, var(--primary-cyan) 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -868,7 +869,7 @@ summary .pill-small {
 
 .hero-accent {
   display: block;
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
   background: linear-gradient(135deg, var(--primary-cyan) 0%, #a855f7 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -878,9 +879,9 @@ summary .pill-small {
 }
 
 .centered-subtitle {
-  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
   margin-top: 15px;
-  max-width: 900px;
+  max-width: 800px;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.4;
@@ -896,7 +897,7 @@ summary .pill-small {
 
 .floating-tablet {
   width: 100%;
-  max-width: 700px;
+  max-width: 600px;
   height: auto;
   border-radius: 20px;
   box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.5), 0 30px 60px -30px rgba(0, 242, 255, 0.2);
@@ -931,7 +932,7 @@ summary .pill-small {
 }
 
 .ultra-title {
-  font-size: clamp(2.5rem, 6vw, 4.5rem) !important;
+  font-size: clamp(2rem, 5vw, 3.5rem) !important;
   font-weight: 900;
   letter-spacing: -0.02em;
   margin-top: 0;
@@ -939,9 +940,9 @@ summary .pill-small {
 }
 
 .single-line {
-  font-size: 1.25rem;
-  max-width: 1000px;
-  margin: 0 auto 50px;
+  font-size: 1.05rem;
+  max-width: 850px;
+  margin: 0 auto 40px;
 }
 
 .teal-highlight {
@@ -953,8 +954,8 @@ summary .pill-small {
   text-align: left;
   display: flex;
   flex-direction: column;
-  padding: 40px !important;
-  min-height: 400px;
+  padding: 30px !important;
+  min-height: 350px;
 }
 
 .tag-capsule {
