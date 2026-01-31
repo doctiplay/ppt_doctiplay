@@ -142,7 +142,7 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 100px 18px 54px;
+  padding: 85px 18px 40px;
   position: relative;
   overflow: hidden;
 }
@@ -151,7 +151,7 @@ section {
 section::after {
   content: "";
   position: absolute;
-  top: 15px;
+  top: 75px;
   left: 15px;
   right: 15px;
   bottom: 15px;
@@ -815,7 +815,7 @@ summary .pill-small {
 /* Pitch Deck Styles */
 .deck-top {
   position: absolute;
-  top: 40px;
+  top: 90px;
   left: 60px;
   right: 60px;
   display: flex;
@@ -848,7 +848,7 @@ summary .pill-small {
 }
 
 .centered-hero {
-  margin-top: 40px;
+  margin-top: -20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -928,7 +928,7 @@ summary .pill-small {
 /* Pitch Deck Slides - Layout Correction */
 .pitch-slide {
   justify-content: flex-start !important;
-  padding-top: 160px !important;
+  padding-top: 100px !important;
 }
 
 .ultra-title {
