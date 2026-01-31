@@ -937,18 +937,19 @@ summary .pill-small {
 }
 
 .ultra-title {
-  font-size: clamp(2rem, 5vw, 3.5rem) !important;
+  font-size: clamp(2.2rem, 6vw, 3.8rem) !important;
   font-weight: 900;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   margin-top: 0;
   margin-bottom: 24px;
 }
 
 .single-line {
   font-size: 1.05rem;
-  max-width: 720px;
-  line-height: 1.5;
-  margin: 0 auto 64px;
+  max-width: 680px;
+  line-height: 1.6;
+  margin: 0 auto 56px;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .teal-highlight {
@@ -960,9 +961,11 @@ summary .pill-small {
   text-align: left;
   display: flex;
   flex-direction: column;
-  padding: 32px !important;
-  min-height: 360px;
+  padding: 40px !important;
+  height: 400px;
+  /* Fixed height for perfect symmetry */
   justify-content: flex-start;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .tag-capsule {
@@ -981,10 +984,11 @@ summary .pill-small {
 }
 
 .horizontal-card h3 {
-  font-size: 1.5rem;
-  font-weight: 800;
+  font-size: 1.6rem;
+  font-weight: 850;
   margin-bottom: 32px;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
+  color: #fff;
 }
 
 .deck-list {
@@ -992,8 +996,8 @@ summary .pill-small {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  max-width: 320px;
+  gap: 20px;
+  max-width: 360px;
 }
 
 .deck-list li {
@@ -1010,14 +1014,15 @@ summary .pill-small {
   height: 16px;
   color: var(--primary-cyan);
   flex-shrink: 0;
-  margin-top: 4px;
+  margin-top: 6px;
+  /* Precise alignment with first line */
 }
 
 .deck-footer-note {
-  margin-top: 48px;
+  margin-top: 56px;
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.4);
   text-align: center;
   font-weight: 400;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
 }
