@@ -959,23 +959,22 @@ summary .pill-small {
 }
 
 .deck-cards {
-  gap: 32px !important;
-  margin-top: 16px;
+  gap: 24px !important;
+  margin-top: 12px;
 }
 
 /* Pitch Deck Slides - Layout Correction */
 .pitch-slide {
   justify-content: center !important;
-  padding-top: 140px !important;
-  /* Increased to clear the floating menu bar */
+  padding-top: 125px !important;
 }
 
 .ultra-title {
-  font-size: clamp(2rem, 5.5vw, 3.5rem) !important;
+  font-size: clamp(2rem, 5vw, 3.2rem) !important;
   font-weight: 900;
   letter-spacing: -0.03em;
   margin-top: 0;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   width: 100%;
   max-width: 1100px;
 }
@@ -984,7 +983,7 @@ summary .pill-small {
   font-size: 1.05rem;
   max-width: 680px;
   line-height: 1.6;
-  margin: 0 auto 56px;
+  margin: 0 auto 40px;
   color: rgba(255, 255, 255, 0.75);
 }
 
@@ -997,9 +996,9 @@ summary .pill-small {
   text-align: left;
   display: flex;
   flex-direction: column;
-  padding: 40px !important;
-  height: 400px;
-  /* Fixed height for perfect symmetry */
+  padding: 32px !important;
+  height: 350px;
+  /* Reduced height to fit frame */
   justify-content: flex-start;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
