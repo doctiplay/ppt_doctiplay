@@ -819,7 +819,7 @@ summary .pill-small {
 /* Pitch Deck Styles */
 .deck-top {
   position: absolute;
-  top: 90px;
+  top: 135px;
   left: 60px;
   right: 60px;
   display: flex;
@@ -852,7 +852,7 @@ summary .pill-small {
 }
 
 .centered-hero {
-  margin-top: -20px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
