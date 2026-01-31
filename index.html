@@ -43,7 +43,7 @@
   <div class="snap-container" id="main">
 
     <!-- SLIDE 1: PITCH DECK STYLE -->
-    <section id="slide-1">
+    <section id="slide-1" class="pitch-slide">
       <div class="deck-top">
         <div class="deck-badge-left">pitch deck 2026</div>
         <div class="pill">✦ simulation médicale IA</div>
@@ -148,45 +148,42 @@
     </section>
 
     <!-- SLIDE 3 -->
-    <section id="slide-3">
+    <section id="slide-3" class="pitch-slide">
       <div class="inner">
-        <h2 class="reveal">Doctiplay</h2>
-        <p class="subtitle reveal">
-          Une simulation clinique immersive orientée <strong>raisonnement</strong> et <strong>prise de
-            décision</strong>, conçue pour compléter la simulation présentielle.
-          <br><span class="muted">Doctiplay n’est pas un simulateur procédural : il cible les choix cliniques, la
-            priorisation et la communication.</span>
+        <h2 class="reveal ultra-title">Doctiplay</h2>
+        <p class="subtitle reveal single-line">
+          Une simulation clinique immersive orientée <span class="teal-highlight">raisonnement clínica</span> et <span
+            class="teal-highlight">décision</span> — conçue pour compléter la simulation haute fidélité.
         </p>
 
-        <div class="card-grid reveal">
-          <div class="card col-3">
-            <span class="tag">Raisonnement</span>
+        <div class="card-grid reveal deck-cards">
+          <div class="card col-3 horizontal-card">
+            <div class="tag-capsule">RAISONNEMENT</div>
             <p>Hypothèses, priorisation, logique clinique en contexte contraint.</p>
           </div>
-          <div class="card col-3">
-            <span class="tag">Décision</span>
+          <div class="card col-3 horizontal-card">
+            <div class="tag-capsule">DÉCISION</div>
             <p>Choix clés, erreurs critiques, timing des décisions.</p>
           </div>
-          <div class="card col-3">
-            <span class="tag">Communication</span>
+          <div class="card col-3 horizontal-card">
+            <div class="tag-capsule">COMMUNICATION</div>
             <p>Transmission, coordination, annonces, gestion équipe/patient.</p>
           </div>
-          <div class="card col-3">
-            <span class="tag">Débrief</span>
-            <p>Débrief structuré : points forts, axes d’amélioration, recommandations.</p>
+          <div class="card col-3 horizontal-card">
+            <div class="tag-capsule">DÉBRIEF</div>
+            <p>Débrief structuré automatique : points forts et axes d’amélioration.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- SLIDE 4 -->
-    <section id="slide-4">
+    <section id="slide-4" class="pitch-slide">
       <div class="inner">
-        <h2 class="reveal">Le parcours apprenant</h2>
-        <p class="subtitle reveal">Un flux simple, pensé pour être rejouable, exploitable en individuel ou en petit
-          groupe.</p>
+        <h2 class="reveal ultra-title">Le parcours apprenant</h2>
+        <p class="subtitle reveal single-line">Un flux simple, rejouable, exploitable en individuel ou en équipe.</p>
 
-        <div class="flow-container reveal">
+        <div class="flow-container reveal" style="margin-bottom: 40px;">
           <svg viewBox="0 0 1000 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
             aria-label="Parcours apprenant Doctiplay">
             <defs>
@@ -206,58 +203,91 @@
             <path d="M80 80H920" stroke="url(#g)" stroke-width="3" stroke-dasharray="10 10" filter="url(#glow)" />
             <g font-family="Inter" font-size="14" fill="rgba(255,255,255,0.9)">
               <circle cx="80" cy="80" r="12" fill="#00f2ff" filter="url(#glow)" />
-              <text x="80" y="125" text-anchor="middle">Choix du scénario</text>
+              <text x="80" y="125" text-anchor="middle">Scénario</text>
 
               <circle cx="290" cy="80" r="12" fill="#00f2ff" filter="url(#glow)" />
               <text x="290" y="125" text-anchor="middle">Briefing</text>
 
               <circle cx="500" cy="80" r="12" fill="#00f2ff" filter="url(#glow)" />
-              <text x="500" y="125" text-anchor="middle">Simulation interactive</text>
+              <text x="500" y="125" text-anchor="middle">Simulation</text>
 
               <circle cx="710" cy="80" r="12" fill="#00f2ff" filter="url(#glow)" />
               <text x="710" y="125" text-anchor="middle">Feedback</text>
 
               <circle cx="920" cy="80" r="12" fill="#00f2ff" filter="url(#glow)" />
-              <text x="920" y="125" text-anchor="middle">Débrief structuré</text>
+              <text x="920" y="125" text-anchor="middle">Débrief</text>
             </g>
           </svg>
         </div>
 
-        <div class="card-grid reveal" style="margin-top: 18px;">
-          <div class="card col-12">
-            <h3>Principe clé</h3>
-            <p>Chaque session peut être rejouée pour comparer les décisions dans le temps (progression) et standardiser
-              l’évaluation.</p>
-          </div>
+        <div class="deck-footer-note reveal">
+          Chaque session peut être <span class="teal-highlight">rejouée</span> pour comparer les décisions dans le temps
+          et <span class="teal-highlight">objectiver</span> la progression.
         </div>
       </div>
     </section>
 
     <!-- SLIDE 5 -->
-    <section id="slide-5">
+    <section id="slide-5" class="pitch-slide">
       <div class="inner">
-        <h2 class="reveal">Scénarios vitrine</h2>
-        <p class="subtitle reveal">Deux exemples de scénarios courts (10–15 min) orientés urgence, priorisation et
-          communication.</p>
+        <h2 class="reveal ultra-title">Scénarios vitrine</h2>
+        <p class="subtitle reveal single-line">Deux exemples de scénarios courts (10–15 min) orientés urgence et
+          priorisation.</p>
 
-        <div class="card-grid reveal">
-          <div class="card col-6">
-            <span class="tag">Urgence métabolique</span>
+        <div class="card-grid reveal deck-cards">
+          <div class="card col-6 horizontal-card">
+            <div class="tag-capsule">URGENCE MÉTABOLIQUE</div>
             <h3>Acidocétose diabétique</h3>
-            <ul class="clean">
-              <li>Priorisation et protocole initial</li>
-              <li>Interprétation des données cliniques / biologiques</li>
-              <li>Décisions critiques & prévention des erreurs</li>
+            <ul class="deck-list">
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Priorisation et protocole initial obligatoire</span>
+              </li>
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Interprétation des données biocs / cliniques</span>
+              </li>
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Décisions critiques & prévention d'erreurs</span>
+              </li>
             </ul>
           </div>
 
-          <div class="card col-6">
-            <span class="tag">Traumatologie</span>
+          <div class="card col-6 horizontal-card">
+            <div class="tag-capsule">TRAUMATOLOGIE</div>
             <h3>Polytraumatisme</h3>
-            <ul class="clean">
-              <li>Triage / priorisation en contexte saturé</li>
-              <li>Communication d’équipe & coordination</li>
-              <li>Gestion du stress et timing des décisions</li>
+            <ul class="deck-list">
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Triage / priorisation en contexte saturé</span>
+              </li>
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Communication d’équipe & coordination SAMU</span>
+              </li>
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Gestion du stress et timing des décisions</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -265,28 +295,64 @@
     </section>
 
     <!-- SLIDE 6 -->
-    <section id="slide-6">
+    <section id="slide-6" class="pitch-slide">
       <div class="inner">
-        <h2 class="reveal">Pour les centres de simulation</h2>
-        <p class="subtitle reveal">Un outil pour augmenter la fréquence d’entraînement et structurer la mesure, sans
-          remplacer la simulation haute fidélité.</p>
+        <h2 class="reveal ultra-title">Centres de simulation</h2>
+        <p class="subtitle reveal single-line">Augmenter la fréquence d’entraînement et structurer la mesure de
+          performance.</p>
 
-        <div class="card-grid reveal">
-          <div class="card col-6">
-            <span class="tag">Pédagogie</span>
-            <ul class="clean">
-              <li>Standardisation des parcours et des critères d’évaluation</li>
-              <li>Débrief structuré et exploitable (axes d’amélioration clairs)</li>
-              <li>Répétabilité : mêmes cas rejoués, progression mesurable</li>
+        <div class="card-grid reveal deck-cards">
+          <div class="card col-6 horizontal-card">
+            <div class="tag-capsule">PÉDAGOGIE</div>
+            <ul class="deck-list">
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Standardisation des parcours et de l'évaluation</span>
+              </li>
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Débrief structuré et exploitable immédiatement</span>
+              </li>
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Répétabilité : progression mesurable dans le temps</span>
+              </li>
             </ul>
           </div>
 
-          <div class="card col-6">
-            <span class="tag">Déploiement</span>
-            <ul class="clean">
-              <li>Utilisable entre deux sessions présentiel (formats courts)</li>
-              <li>Individuel ou petit groupe, encadrement léger</li>
-              <li>Approche “banque de scénarios” (co-construction possible)</li>
+          <div class="card col-6 horizontal-card">
+            <div class="tag-capsule">DÉPLOIEMENT</div>
+            <ul class="deck-list">
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Formats courts utilisables entre deux sessions HF</span>
+              </li>
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Individuel ou petit groupe, encadrement léger</span>
+              </li>
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Approche “banque de scénarios” évolutive</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -294,45 +360,67 @@
     </section>
 
     <!-- SLIDE 7 -->
-    <section id="slide-7">
+    <section id="slide-7" class="pitch-slide">
       <div class="inner">
-        <h2 class="reveal">Protocole d’évaluation (KPI)</h2>
-        <p class="subtitle reveal">Des indicateurs simples, avant/après — adaptés aux pilotes et aux centres de
-          simulation.</p>
+        <h2 class="reveal ultra-title">Protocole (KPI)</h2>
+        <p class="subtitle reveal single-line">Des indicateurs simples, avant/après — adaptés aux pilotes.</p>
 
-        <div class="card-grid reveal">
-          <div class="card col-4">
+        <div class="card-grid reveal deck-cards">
+          <div class="card col-4 horizontal-card">
             <div class="kpi">
               <div class="kpi-value">Avant / Après</div>
-              <div class="kpi-label">Score de décision clinique (raisonnement + priorisation)</div>
+              <div class="kpi-label">Score de décision clinique (raisonnement)</div>
             </div>
           </div>
-          <div class="card col-4">
+          <div class="card col-4 horizontal-card">
             <div class="kpi">
               <div class="kpi-value">↓</div>
-              <div class="kpi-label">Erreurs critiques (mauvaises décisions / oublis)</div>
+              <div class="kpi-label">Erreurs critiques (mauvaises décisions)</div>
             </div>
           </div>
-          <div class="card col-4">
+          <div class="card col-4 horizontal-card">
             <div class="kpi">
               <div class="kpi-value">↓</div>
               <div class="kpi-label">Temps pour initier la bonne prise en charge</div>
             </div>
           </div>
 
-          <div class="card col-6">
-            <span class="tag">Qualité du débrief</span>
-            <ul class="clean">
-              <li>Satisfaction / utilité perçue (NPS, note /10)</li>
-              <li>Clarté des axes d’amélioration et transfert en pratique</li>
+          <div class="card col-6 horizontal-card">
+            <div class="tag-capsule">QUALITÉ DU DÉBRIEF</div>
+            <ul class="deck-list">
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Satisfaction / utilité perçue (NPS)</span>
+              </li>
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Clarté des recommandations pédagogiques</span>
+              </li>
             </ul>
           </div>
-          <div class="card col-6">
-            <span class="tag">Adoption & répétabilité</span>
-            <ul class="clean">
-              <li>Sessions par apprenant / mois</li>
-              <li>Taux de complétion & rejouabilité</li>
-              <li>Usage par filière (urgence, SMUR, IFSI/IFAS…)</li>
+          <div class="card col-6 horizontal-card">
+            <div class="tag-capsule">ADOPTION</div>
+            <ul class="deck-list">
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Sessions par apprenant / mois</span>
+              </li>
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Taux de rejouabilité & complétion</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -340,50 +428,101 @@
     </section>
 
     <!-- SLIDE 8 -->
-    <section id="slide-8">
+    <section id="slide-8" class="pitch-slide">
       <div class="inner">
-        <h2 class="reveal">Crédibilité & alignement pédagogique</h2>
-        <p class="subtitle reveal">Une approche conçue pour s’intégrer aux pratiques de simulation (scénarios,
-          objectifs, débrief, évaluation).</p>
+        <h2 class="reveal ultra-title">Crédibilité</h2>
+        <p class="subtitle reveal single-line">Une approche alignée avec les meilleures pratiques de simulation
+          médicale.</p>
 
-        <div class="card-grid reveal">
-          <div class="card col-12">
-            <ul class="clean">
-              <li>Déploiement pilote au <strong>CHU de Rabat</strong> (retours d’usage terrain)</li>
-              <li>Discussions avec des équipes <strong>CESU / SAMU</strong> en France pour cadrer un pilote</li>
-              <li>Approche alignée avec les logiques de <strong>scénarisation</strong> et <strong>débrief
-                  structuré</strong></li>
+        <div class="card-grid reveal deck-cards">
+          <div class="card col-12 horizontal-card">
+            <ul class="deck-list" style="max-width: 100%;">
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Pilote clinique au <strong>CHU de Rabat</strong> (usage terrain régulier)</span>
+              </li>
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Cadrage en cours avec des équipes <strong>CESU / SAMU</strong> en France</span>
+              </li>
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Aligné sur les logiques de <strong>scénarisation</strong> & <strong>débrief
+                    structuré</strong></span>
+              </li>
             </ul>
-            <p class="muted" style="margin-top:10px;">(À personnaliser selon ton interlocuteur : filière, objectifs
-              pédagogiques, modalités.)</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- SLIDE 9 -->
-    <section id="slide-9">
+    <section id="slide-9" class="pitch-slide">
       <div class="inner">
-        <h2 class="reveal">Conformité & sécurité</h2>
-        <p class="subtitle reveal">Cadre clair : formation, données minimisées, et gouvernance définie avec
-          l’établissement.</p>
+        <h2 class="reveal ultra-title">Conformité & sécurité</h2>
+        <p class="subtitle reveal single-line">Cadre clair : formation, données minimisées, et gouvernance définie.</p>
 
-        <div class="card-grid reveal">
-          <div class="card col-6">
-            <span class="tag">RGPD & gouvernance</span>
-            <ul class="clean">
-              <li>Données minimisées (périmètre défini en amont du pilote)</li>
-              <li>NDA / DPA possibles selon les exigences</li>
-              <li>Gestion des accès (rôles) et traçabilité des usages</li>
+        <div class="card-grid reveal deck-cards">
+          <div class="card col-6 horizontal-card">
+            <div class="tag-capsule">RGPD & GOUVERNANCE</div>
+            <ul class="deck-list">
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Données minimisées (périmètre défini en amont du pilote)</span>
+              </li>
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>NDA / DPA possibles selon les exigences établissement</span>
+              </li>
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Gestion des accès (rôles) et traçabilité des usages</span>
+              </li>
             </ul>
           </div>
 
-          <div class="card col-6">
-            <span class="tag">Positionnement</span>
-            <ul class="clean">
-              <li>Outil de formation : pas d’aide au diagnostic ni de décision clinique réelle</li>
-              <li>Scénarios validés / ajustés avec experts selon le protocole pilote</li>
-              <li>Transparence sur les limites et objectifs pédagogiques</li>
+          <div class="card col-6 horizontal-card">
+            <div class="tag-capsule">POSITIONNEMENT</div>
+            <ul class="deck-list">
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Outil de formation : pas d’aide au diagnostic réel</span>
+              </li>
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Scénarios validés / ajustés avec vos experts métiers</span>
+              </li>
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span>Transparence sur les limites et objectifs pédagogiques</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -391,39 +530,55 @@
     </section>
 
     <!-- SLIDE 10 -->
-    <section id="slide-10">
+    <section id="slide-10" class="pitch-slide">
       <div class="inner">
-        <h2 class="reveal">Pilote proposé</h2>
-        <p class="subtitle reveal">Tester en conditions réelles, mesurer, itérer, puis décider d’un déploiement.</p>
+        <h2 class="reveal ultra-title">Pilote proposé</h2>
+        <p class="subtitle reveal single-line">Tester en conditions réelles, mesurer, itérer, puis décider.</p>
 
-        <div class="card-grid reveal">
-          <div class="card col-7" style="border-color: rgba(0,242,255,0.28); box-shadow: var(--glow);">
-            <span class="tag">Scenario Day</span>
-            <h3>Une journée pour lancer vite (et propre)</h3>
-            <ul class="clean">
-              <li>Démo + cadrage pédagogique (objectifs, critères, population)</li>
-              <li>1–2 scénarios joués avec un groupe test</li>
-              <li>Débrief + ajustements + protocole KPI (avant/après)</li>
-              <li>Plan de test (période, volume, modalités d’encadrement)</li>
+        <div class="card-grid reveal deck-cards">
+          <div class="card col-7 horizontal-card" style="border-color: rgba(0,242,255,0.28); box-shadow: var(--glow);">
+            <div class="tag-capsule">LE PACK PILOTE</div>
+            <ul class="deck-list">
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span><strong>Accès complet</strong> : Plateforme + banque de scénarios</span>
+              </li>
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span><strong>Cadrage pédagogique</strong> : Objectifs & KPI sur mesure</span>
+              </li>
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span><strong>Accompagnement</strong> : Formation encadrants & Support</span>
+              </li>
+              <li>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span><strong>Reporting final</strong> : Analyse d'impact & recommandations</span>
+              </li>
             </ul>
           </div>
 
-          <div class="card col-5">
-            <span class="tag">Pack pilote</span>
-            <ul class="clean">
-              <li>Accès plateforme + scénarios vitrine</li>
-              <li>Tableau de bord d’analyse pédagogique</li>
-              <li>Rapport de synthèse (KPI + retours terrain)</li>
-            </ul>
-            <div style="margin-top:16px; text-align:center;">
-              <div
-                style="font-family:'IBM Plex Mono', monospace; letter-spacing:0.10em; text-transform:uppercase; color:rgba(255,255,255,0.65); font-size:0.78rem;">
-                Prix cible pilote</div>
-              <div style="font-size:2rem; font-weight:900; color:rgba(255,255,255,0.95); margin-top:6px;">5 000 € HT
-              </div>
-              <div class="muted" style="margin-top:6px; font-size:0.95rem;">(ajustable selon périmètre / durée /
-                scénarios)</div>
+          <div class="card col-5 horizontal-card">
+            <div class="tag-capsule">INVESTISSEMENT PILOTE</div>
+            <div class="kpi" style="margin-top: 20px;">
+              <div class="kpi-value" style="font-size: 2.5rem;">2 500 € <span
+                  style="font-size: 1rem; opacity: 0.6;">HT</span></div>
+              <p style="margin-top: 10px; opacity: 0.8; font-size: 0.9rem;">Pack tout inclus pour 50-100 apprenants.</p>
             </div>
+            <div class="muted" style="margin-top:24px; font-size:0.85rem;">(Ajustable selon périmètre / durée /
+              scénarios spécifiques)</div>
           </div>
         </div>
       </div>
@@ -529,35 +684,35 @@
     </section>
 
     <!-- SLIDE 12 -->
-    <section id="slide-12">
+    <section id="slide-12" class="pitch-slide">
       <div class="inner center">
-        <h2 class="reveal">Prêt à tester Doctiplay dans votre centre&nbsp;?</h2>
-        <p class="subtitle reveal">Objectif : une démo rapide, puis un cadrage pilote clair — avec mesure avant/après.
+        <h2 class="reveal ultra-title" style="max-width: 900px; margin: 0 auto 32px;">Prêt à tester Doctiplay dans votre
+          centre&nbsp;?</h2>
+        <p class="subtitle reveal single-line" style="margin-bottom: 48px;">
+          Objectif : une démo rapide, puis un cadrage pilote clair — avec mesure de résultat.
         </p>
 
         <div class="btn-group reveal">
-          <a href="mailto:contact@doctiplay.com?subject=Demande%20de%20d%C3%A9mo%20Doctiplay&body=Bonjour%2C%0A%0AJe%20souhaite%20planifier%20une%20d%C3%A9mo%20Doctiplay.%0A%0AContexte%20%3A%20%5Bcentre%2F%C3%A9quipe%5D%0AObjectifs%20%3A%20%5Bex%20urgence%2C%20SMUR%2C%20IFSI%2FIFAS%5D%0ADisponibilit%C3%A9s%20%3A%20%5Bcr%C3%A9neaux%5D%0A%0ABien%20cordialement%2C"
-            class="btn btn-primary" aria-label="Demander une démo">
+          <a href="mailto:contact@doctiplay.com" class="btn btn-primary">
             Demander une démo
             <svg viewBox="0 0 24 24" fill="none">
               <path d="M4 4h16v16H4z" stroke="#06101f" stroke-width="2" />
               <path d="M4 7l8 6 8-6" stroke="#06101f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </a>
-          <a href="/doctiplay.pdf" class="btn btn-outline" aria-label="Télécharger la présentation PDF">
+          <a href="/doctiplay.pdf" class="btn btn-outline">
             Télécharger le PDF
             <svg viewBox="0 0 24 24" fill="none">
               <path d="M12 3v10" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" />
               <path d="M8 11l4 4 4-4" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" />
-              <path d="M5 21h14" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" />
             </svg>
           </a>
         </div>
 
-        <p class="muted reveal" style="margin-top: 22px;">
-          1) Échange 20 min → 2) Démo personnalisée → 3) Cadrage pilote (Scenario Day) → 4) Rapport KPI
-        </p>
+        <div class="deck-footer-note reveal" style="margin-top: 50px;">
+          Échange 20 min → Démo personnalisée → <span class="teal-highlight">Scenario Day</span> → Rapport KPI
+        </div>
       </div>
     </section>
 
