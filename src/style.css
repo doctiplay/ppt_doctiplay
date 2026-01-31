@@ -865,15 +865,17 @@ summary .pill-small {
 }
 
 .centered-hero {
-  margin-top: 20px;
+  margin-top: 40px;
+  /* Increased margin to push hero content below the menu bar */
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
 .hero-logo-icon {
-  height: 80px;
-  margin-bottom: 24px;
+  height: 70px;
+  /* Slightly reduced height to fit better */
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
 }
@@ -964,8 +966,8 @@ summary .pill-small {
 /* Pitch Deck Slides - Layout Correction */
 .pitch-slide {
   justify-content: center !important;
-  padding-top: 85px !important;
-  /* Keep clearing top bar */
+  padding-top: 140px !important;
+  /* Increased to clear the floating menu bar */
 }
 
 .ultra-title {
