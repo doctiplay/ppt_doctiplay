@@ -459,7 +459,7 @@ ul.clean li::before {
 /* Reveal */
 .reveal {
   opacity: 0;
-  transform: translateY(22px);
+  transform: translateY(18px);
   transition: all 0.7s ease-out;
 }
 
