@@ -1,5 +1,3 @@
-import './style.css'
-
 const container = document.getElementById('main');
 const indicator = document.getElementById('indicator');
 
@@ -8,17 +6,33 @@ container.addEventListener('scroll', () => {
   const scrollPos = container.scrollTop;
   const height = container.scrollHeight - container.clientHeight;
   const scrolled = height > 0 ? (scrollPos / height) * 100 : 0;
-  indicator.style.height = scrolled + '%';
+  if (indicator) indicator.style.height = scrolled + '%';
 });
 
 // Reveal animations
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('active');
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
   });
-}, { threshold: 0.18 });
+}, {
+  root: container,
+  rootMargin: '0px 0px -10% 0px',
+  threshold: 0.05
+});
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Force check on load to reveal elements already in view
+window.addEventListener('load', () => {
+  document.querySelectorAll('.reveal').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add('active');
+    }
+  });
+});
 
 // Keyboard navigation
 window.addEventListener('keydown', (e) => {
