@@ -2412,7 +2412,10 @@ ul.clean li::before {
 .design-frise {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 25px;
+  margin-top: 15px;
+  /* Separation from subtitle */
+  margin-bottom: 20px;
+  /* Space before cards */
   position: relative;
   padding: 0 20px;
 }
