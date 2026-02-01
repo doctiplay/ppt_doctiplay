@@ -1288,26 +1288,6 @@ ul.clean li::before {
   padding: 0;
 }
 
-/* Specific images */
-.step-media.step-brief {
-  background-image: url('../public/context_card.png');
-}
-
-.step-media.step-scenario {
-  background-image: url('../public/scenario_card.png');
-  background-position: top center;
-  /* Focus on the header "RAPPORT DE SITUATION" */
-}
-
-/* Optimization for Step 1 (Brief) Card */
-.step-media.step-brief {
-  background-position: top center !important;
-  background-size: 120% auto !important;
-  /* Zoom slightly to focus on the Identity Card */
-  background-position-y: 15% !important;
-  /* Offset slightly to skip the very top nav if needed, or frame the Identity card better */
-}
-
 /* Timeline & Card Sizing Adjustments */
 .timeline-ui {
   gap: 12px !important;
