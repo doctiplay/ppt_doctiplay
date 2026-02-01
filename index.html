@@ -656,100 +656,100 @@
       <div class="inner">
         <div class="slide-header">
           <h2 class="reveal ultra-title">Le moteur : simulation clinique en temps réel</h2>
-          <p class="subtitle reveal single-line">Chaque action met à jour les constantes, alimente un log horodaté, et
-            prépare le débrief.</p>
+          <p class="subtitle reveal single-line single-line-wide">Chaque action met à jour les constantes, alimente un
+            log horodaté, et prépare le débrief.</p>
         </div>
         <div class="slide-content">
-          <!-- Hotspot hint banner -->
-          <div class="reveal" style="text-align: center; margin-bottom: 12px; opacity: 0.6;">
+          <!-- Action Banner -->
+          <div class="reveal" style="text-align: center; margin-bottom: 25px;">
             <span
-              style="font-family: 'IBM Plex Mono'; font-size: 0.65rem; color: var(--primary-cyan); border: 1px solid rgba(0,242,255,0.2); border-radius: 4px; padding: 4px 10px; text-transform: uppercase; letter-spacing: 1px;">
-              Mode web : cliquez sur les hotspots
+              style="font-family: 'IBM Plex Mono'; font-size: 0.65rem; color: var(--primary-cyan); border: 1px solid rgba(0,242,255,0.25); border-radius: 20px; padding: 6px 18px; text-transform: uppercase; letter-spacing: 1px; background: rgba(0,242,255,0.05);">
+              Une action → une réaction → une trace → un débrief
             </span>
           </div>
-          <!-- Main Screenshot Area -->
+          <!-- Main Engine Visualization Area -->
           <div class="reveal current-view-container"
-            style="width: 100%; max-width: 900px; margin: 0 auto; position: relative;">
+            style="width: 100%; max-width: 960px; margin: 0 auto; position: relative; padding: 0 100px;">
+
+            <!-- Callout 1: Temps réel -->
+            <div class="engine-callout" style="top: -20px; left: -80px;">
+              <span class="label">Temps réel</span>
+              <span class="text">Les constantes réagissent aux décisions (O₂, remplissage, ventilation…).</span>
+            </div>
+            <svg class="callout-arrow-svg" style="top: 20px; left: 130px; width: 60px; height: 40px;">
+              <path d="M0 0 Q 30 0, 50 30" stroke="var(--primary-cyan)" stroke-width="1.5" fill="none"
+                marker-end="url(#arrowhead)" />
+            </svg>
+
+            <!-- Callout 2: Ordres cliniques -->
+            <div class="engine-callout" style="bottom: 80px; left: -80px;">
+              <span class="label">Ordres cliniques</span>
+              <span class="text">Prescrire / administrer / surveiller → événement enregistré.</span>
+            </div>
+            <svg class="callout-arrow-svg" style="bottom: 120px; left: 130px; width: 60px; height: 60px;">
+              <path d="M0 60 Q 30 60, 55 25" stroke="var(--primary-cyan)" stroke-width="1.5" fill="none"
+                marker-end="url(#arrowhead)" />
+            </svg>
+
+            <!-- Callout 3: Résultats contextuels -->
+            <div class="engine-callout" style="top: 60px; right: -80px;">
+              <span class="label">Résultats contextuels</span>
+              <span class="text">GDS, kaliémie, glycémie… selon l’évolution.</span>
+            </div>
+            <svg class="callout-arrow-svg" style="top: 100px; right: 130px; width: 60px; height: 60px;">
+              <path d="M60 0 Q 30 0, 5 45" stroke="var(--primary-cyan)" stroke-width="1.5" fill="none"
+                marker-end="url(#arrowhead)" />
+            </svg>
+
+            <!-- Callout 4: Traçabilité -->
+            <div class="engine-callout" style="bottom: -20px; right: -80px;">
+              <span class="label">Traçabilité</span>
+              <span class="text">Log horodaté → base du scoring & du débrief.</span>
+            </div>
+            <svg class="callout-arrow-svg" style="bottom: 30px; right: 130px; width: 80px; height: 40px;">
+              <path d="M80 40 Q 40 40, 5 5" stroke="var(--primary-cyan)" stroke-width="1.5" fill="none"
+                marker-end="url(#arrowhead)" />
+            </svg>
+
+            <!-- Define Arrowhead Marker -->
+            <svg width="0" height="0" style="position: absolute;">
+              <defs>
+                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                  <polygon points="0 0, 10 3.5, 0 7" fill="var(--primary-cyan)" />
+                </marker>
+              </defs>
+            </svg>
+
             <div class="tablet-frame"
               style="position: relative; border-radius: 20px; overflow: hidden; border: 4px solid #1a1a1a; box-shadow: 0 10px 40px rgba(0,242,255,0.15);">
               <div class="tablet-camera"
                 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 6px; height: 6px; background: #333; border-radius: 50%; z-index: 10;">
               </div>
-
-              <div class="hotspot-container">
-                <!-- Hotspot 1: Moniteur (Top Rightish) -->
-                <div class="hotspot" style="top: 25%; left: 82%;" onclick="this.classList.toggle('active')">1</div>
-                <div class="hotspot-tooltip tooltip-left">
-                  <h5 style="color:var(--primary-cyan); margin-bottom:5px; font-size:0.8rem;">Temps réel</h5>
-                  <p style="font-size:0.75rem; margin:0; opacity:0.8;">Les constantes réagissent selon vos actions (O₂,
-                    remplissage, ventilation, insuline…).</p>
-                </div>
-
-                <!-- Hotspot 2: Ordres/Détection (Bottom Left) -->
-                <div class="hotspot" style="top: 75%; left: 15%;" onclick="this.classList.toggle('active')">2</div>
-                <div class="hotspot-tooltip tooltip-right">
-                  <h5 style="color:var(--primary-cyan); margin-bottom:5px; font-size:0.8rem;">Actions</h5>
-                  <p style="font-size:0.75rem; margin:0; opacity:0.8;">Vous prescrivez / administrez / surveillez.
-                    Chaque ordre déclenche une réaction du simulateur.</p>
-                </div>
-
-                <!-- Hotspot 3: Paracliniques (Center Right) -->
-                <div class="hotspot" style="top: 60%; left: 85%;" onclick="this.classList.toggle('active')">3</div>
-                <div class="hotspot-tooltip tooltip-left">
-                  <h5 style="color:var(--primary-cyan); margin-bottom:5px; font-size:0.8rem;">Paracliniques</h5>
-                  <p style="font-size:0.75rem; margin:0; opacity:0.8;">Résultats contextuels (GDS, kaliémie, glycémie…)
-                    selon la progression du cas.</p>
-                </div>
-
-                <!-- Hotspot 4: Journal/Log (Bottom Right) -->
-                <div class="hotspot" style="top: 85%; left: 70%;" onclick="this.classList.toggle('active')">4</div>
-                <div class="hotspot-tooltip tooltip-top">
-                  <h5 style="color:var(--primary-cyan); margin-bottom:5px; font-size:0.8rem;">Traçabilité</h5>
-                  <p style="font-size:0.75rem; margin:0; opacity:0.8;">Log horodaté des événements = base du scoring et
-                    du débrief guidé.</p>
-                </div>
-              </div>
-
               <img src="doctiplay_screen_actual.png" alt="Interface Simulateur"
-                style="display: block; width: 100%; height: auto; opacity: 0.95;">
+                style="display: block; width: 100%; height: auto; opacity: 1;">
               <div
-                style="position: absolute; bottom: 0; left: 0; right: 0; padding: 12px; background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, transparent 100%); color: var(--primary-cyan); font-family: 'IBM Plex Mono'; font-size: 0.65rem; text-align: center; text-transform: uppercase; letter-spacing: 1px;">
+                style="position: absolute; bottom: 0; left: 0; right: 0; padding: 12px; background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, transparent 100%); color: var(--primary-cyan); font-family: 'IBM Plex Mono'; font-size: 0.6rem; text-align: center; text-transform: uppercase; letter-spacing: 1px;">
                 Moteur de constantes dynamique v2
               </div>
             </div>
           </div>
 
-          <!-- Technical Badges -->
-          <div class="reveal badges-row" style="display: flex; justify-content: center; gap: 20px; margin-top: 25px;">
-            <div
-              style="padding: 8px 16px; background: rgba(0, 242, 255, 0.05); border: 1px solid rgba(0, 242, 255, 0.15); border-radius: 6px; text-align: center;">
-              <div
-                style="color: var(--primary-cyan); font-family: 'IBM Plex Mono'; font-size: 0.7rem; font-weight: 700; margin-bottom: 2px;">
-                Temps réel</div>
-              <div style="color: rgba(255,255,255,0.6); font-size: 0.65rem;">“Cause → effet visible”</div>
-            </div>
-            <div
-              style="padding: 8px 16px; background: rgba(0, 242, 255, 0.05); border: 1px solid rgba(0, 242, 255, 0.15); border-radius: 6px; text-align: center;">
-              <div
-                style="color: var(--primary-cyan); font-family: 'IBM Plex Mono'; font-size: 0.7rem; font-weight: 700; margin-bottom: 2px;">
-                Traçable</div>
-              <div style="color: rgba(255,255,255,0.6); font-size: 0.65rem;">“Actions horodatées”</div>
-            </div>
-            <div
-              style="padding: 8px 16px; background: rgba(0, 242, 255, 0.05); border: 1px solid rgba(0, 242, 255, 0.15); border-radius: 6px; text-align: center;">
-              <div
-                style="color: var(--primary-cyan); font-family: 'IBM Plex Mono'; font-size: 0.7rem; font-weight: 700; margin-bottom: 2px;">
-                Mesurable</div>
-              <div style="color: rgba(255,255,255,0.6); font-size: 0.65rem;">“Avant/après + export PDF”</div>
-            </div>
+          <!-- Bottom Steps Frise -->
+          <div class="reveal engine-steps-frise">
+            <div class="engine-step-item">Décision</div>
+            <div class="engine-frise-arrow">→</div>
+            <div class="engine-step-item">Physio</div>
+            <div class="engine-frise-arrow">→</div>
+            <div class="engine-step-item">Paracliniques</div>
+            <div class="engine-frise-arrow">→</div>
+            <div class="engine-step-item">Log</div>
+            <div class="engine-frise-arrow">→</div>
+            <div class="engine-step-item">Débrief</div>
           </div>
 
           <!-- Pedagogic Impact Footer -->
           <div class="reveal impact-pedago-block"
-            style="margin-top: 35px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; text-align: center;">
-            <h4
-              style="color: var(--primary-cyan); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 15px; opacity: 0.8;">
-              Impact pédagogique</h4>
+            style="margin-top: 25px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; text-align: center;">
             <div
               style="display: flex; justify-content: center; gap: 40px; font-size: 0.8rem; color: rgba(255,255,255,0.85);">
               <span>● <strong style="color: #fff;">Rejouable :</strong> même cas, mêmes critères</span>
