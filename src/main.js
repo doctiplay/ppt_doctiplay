@@ -66,6 +66,22 @@ function init() {
       }
     });
   });
+  // PDF Export
+  const pdfBtn = document.getElementById('pdf-export-btn');
+  if (pdfBtn) {
+    pdfBtn.addEventListener('click', () => {
+      // Force reveal all elements for export
+      const reveals = document.querySelectorAll('.reveal');
+      reveals.forEach(el => el.classList.add('active'));
+
+      // Give a tiny moment for layout to settle if needed
+      setTimeout(() => {
+        window.print();
+        // Optional: remove them if we want to reset (but user might stay on page)
+        // reveals.forEach(el => el.classList.remove('active'));
+      }, 300);
+    });
+  }
 }
 
 // Run on load and ensure DOM is ready

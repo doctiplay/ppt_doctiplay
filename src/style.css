@@ -2324,3 +2324,101 @@ ul.clean li::before {
   /* Space before content text */
   vertical-align: top;
 }
+
+/* PDF Floating Action Button */
+.pdf-fab {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--bg-dark);
+  border: 1px solid var(--primary-cyan);
+  color: var(--primary-cyan);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 242, 255, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: auto;
+}
+
+.pdf-fab svg {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 2px;
+}
+
+.pdf-fab span {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.pdf-fab:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: rgba(0, 242, 255, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 242, 255, 0.4);
+}
+
+/* @media print for PDF export */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+
+  body {
+    background: #050a14 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide UI elements */
+  .topbar,
+  .progress-bar,
+  .scroll-arrow,
+  .pdf-fab,
+  .btn-top {
+    display: none !important;
+  }
+
+  .snap-container {
+    overflow: visible !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  section {
+    height: 100vh !important;
+    width: 100vw !important;
+    page-break-after: always !important;
+    page-break-inside: avoid !important;
+    position: relative !important;
+    padding: 60px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: hidden !important;
+  }
+
+  /* Force visibility for print */
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+
+  /* Adjust background gradient for print */
+  body::before {
+    display: none !important;
+  }
+
+  .pitch-slide {
+    background: #050a14 !important;
+  }
+}
