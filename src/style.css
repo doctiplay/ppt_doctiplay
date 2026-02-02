@@ -7,8 +7,10 @@
   --text-dim: rgba(255, 255, 255, 0.55);
   --card-bg: rgba(255, 255, 255, 0.06);
   --card-border: rgba(0, 242, 255, 0.22);
-  --glow: 0 0 28px rgba(0, 242, 255, 0.12);
-  --glow-strong: 0 0 40px rgba(0, 242, 255, 0.20);
+  --glow: 0 0 15px rgba(0, 242, 255, 0.08);
+  /* Reduced glow */
+  --glow-strong: 0 0 25px rgba(0, 242, 255, 0.12);
+  /* Reduced glow */
   --radius-xl: 24px;
   --radius-lg: 16px;
   --radius-pill: 999px;
@@ -249,13 +251,14 @@ body::before {
   text-transform: uppercase;
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 0 10px rgba(0, 242, 255, 0.15);
+  box-shadow: 0 2px 6px rgba(0, 242, 255, 0.08);
+  /* Minimalist glow */
 }
 
 .btn-top:hover {
   transform: translateY(-2px);
   background: rgba(0, 242, 255, 0.1);
-  box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 242, 255, 0.15);
   color: #ffffff;
 }
 
@@ -371,7 +374,7 @@ h1 {
   font-weight: 900;
   font-size: clamp(2.6rem, 6.2vw, 5.4rem);
   color: var(--primary-cyan);
-  text-shadow: 0 0 34px rgba(0, 242, 255, 0.15);
+  text-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
 }
 
 h2 {
@@ -428,12 +431,12 @@ h2 {
 .btn-primary {
   background: var(--primary-cyan);
   color: #06101f;
-  box-shadow: 0 6px 18px rgba(0, 242, 255, 0.28);
+  box-shadow: 0 4px 12px rgba(0, 242, 255, 0.15);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 26px rgba(0, 242, 255, 0.42);
+  box-shadow: 0 6px 18px rgba(0, 242, 255, 0.25);
 }
 
 .btn-outline {
@@ -495,6 +498,18 @@ h2 {
   transform: translateY(-6px);
   border-color: rgba(0, 242, 255, 0.35);
   box-shadow: var(--glow);
+}
+
+/* Dashboard Table Elements */
+.dashboard-row {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+}
+
+.dashboard-row:hover {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(0, 242, 255, 0.1) !important;
+  transform: translateX(4px);
 }
 
 .card h3 {
