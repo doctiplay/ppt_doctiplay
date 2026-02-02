@@ -3,12 +3,12 @@
 .live-monitor {
     position: absolute;
     /* Aligned with Technical Log left edge, covering the old curve */
-    top: 13.3%;
-    left: 9%;
-    width: 44.5%;
-    height: 35.5%;
+    top: 13.5%;
+    left: 8.8%;
+    width: 44.8%;
+    height: 35.2%;
     background: #000;
-    border-radius: 4px;
+    border-radius: 3px;
     overflow: hidden;
     z-index: 20;
     display: flex;
@@ -22,9 +22,9 @@
 .scope-header {
     display: flex;
     justify-content: space-between;
-    padding: 4px 8px;
+    padding: 2px 6px;
     background: rgba(255, 255, 255, 0.05);
-    font-size: 0.55rem;
+    font-size: 0.45rem;
     color: #aaa;
     flex-shrink: 0;
 }
@@ -137,10 +137,10 @@ canvas {
 }
 
 .val-num {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     /* Adjusted for space */
     font-weight: 700;
-    line-height: 1;
+    line-height: 0.9;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
 }
@@ -244,37 +244,6 @@ canvas {
     }
 }
 
-/* Game Timer Overlay (Top Right of Tablet) */
-.game-timer-overlay {
-    position: absolute;
-    top: 10.3%;
-    /* Perfectly aligned with the 10:45 text */
-    right: 10.4%;
-    /* Perfectly aligned with the 10:45 text */
-    display: flex;
-    align-items: center;
-    background: #0D1117;
-    /* Matches the header bar background to erase old text */
-    padding: 1px 4px;
-    border-radius: 4px;
-    z-index: 25;
-    color: #0ff;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.55rem;
-    font-weight: 600;
-}
-
-.game-timer-overlay .timer-icon {
-    width: 10px;
-    height: 10px;
-    margin-right: 4px;
-    stroke: #0ff;
-}
-
-.game-timer-overlay .timer-countdown {
-    text-shadow: 0 0 5px rgba(0, 255, 255, 0.4);
-    line-height: 1;
-}
 
 /* Print Handling */
 @media print {

@@ -16,12 +16,14 @@
   --radius-pill: 999px;
   --maxw: 1100px;
 
-  /* Global Template Tokens */
-  --frame-top: 115px;
-  --frame-side: 20px;
+  /* Global Template Tokens - Compact 16:9 Pitch Deck */
+  --frame-top: 70px;
+  /* Reduced from 115px to move up */
+  --frame-side: 40px;
   --frame-bottom: 20px;
-  --header-height: 140px;
-
+  /* Reduced to maximize space */
+  --header-height: 60px;
+  /* Reduced from 140px to give room to content */
   /* Slide 5 Specific Tokens */
   --report-bg: #0c1220;
   --report-border: rgba(0, 242, 255, 0.15);
@@ -310,7 +312,9 @@ section::after {
 }
 
 .slide-header {
-  height: var(--header-height);
+  min-height: var(--header-height);
+  height: auto;
+  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -323,14 +327,15 @@ section::after {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  /* Unified baseline */
+  justify-content: center;
+  /* Center content vertically by default */
   align-items: center;
   width: 100%;
-  overflow-y: auto;
-  /* Allow scrolling if content overflows */
+  overflow: hidden !important;
+  /* STRICT NO SCROLL */
   scrollbar-width: none;
-  /* Hide scrollbar for cleaner look */
+  gap: 10px;
+  /* Reduced gap */
 }
 
 .slide-content::-webkit-scrollbar {
@@ -395,9 +400,10 @@ h2 {
 .subtitle {
   text-align: center;
   color: var(--text-gray);
-  font-size: 1rem;
+  font-size: 0.95rem;
   max-width: 800px;
-  margin: 0 auto 20px;
+  margin: 0 auto 10px;
+  /* Reduced from 20px */
 }
 
 .muted {
@@ -475,7 +481,8 @@ h2 {
 .card-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 16px;
+  gap: 10px;
+  /* Reduced from 12px */
   width: 100%;
   max-width: var(--maxw);
   margin: 0 auto;
@@ -485,8 +492,10 @@ h2 {
   background: var(--card-bg);
   border: 1px solid rgba(0, 242, 255, 0.15);
   box-shadow: 0 0 20px rgba(0, 242, 255, 0.05);
-  padding: 22px;
-  border-radius: var(--radius-xl);
+  padding: 12px;
+  /* Reduced from 16px */
+  border-radius: 16px;
+  /* Slightly tighter radius */
   backdrop-filter: blur(12px);
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   position: relative;
@@ -522,8 +531,10 @@ h2 {
 
 .card h3 {
   color: rgba(255, 255, 255, 0.95);
-  font-size: 1.05rem;
-  margin-bottom: 10px;
+  font-size: 0.85rem;
+  /* Reduced from 0.95rem */
+  margin-bottom: 6px;
+  /* Reduced from 8px */
   letter-spacing: 0.01em;
 }
 
@@ -648,14 +659,61 @@ ul.clean li::before {
 /* Pitch Deck Styles */
 .deck-top {
   position: absolute;
-  top: 145px;
-  /* Lowered from 135px to clear the border comfortably */
+  top: 80px;
+  /* Aligned with new frame-top (70px + 10px padding) */
   left: 60px;
   right: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 10;
+}
+
+/* Alert Rows */
+.alert-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  /* Reduced from 8px */
+}
+
+.alert-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  /* Reduced from 8px */
+  padding: 6px 8px;
+  /* Reduced padding */
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.alert-row svg {
+  width: 14px;
+  /* Reduced from 16px */
+  height: 14px;
+  color: var(--primary-cyan);
+  flex-shrink: 0;
+}
+
+.alert-row span {
+  font-size: 0.75rem;
+  /* Reduced font size */
+  color: #ddd;
+  line-height: 1.25;
+}
+
+/* Specific Card Layouts */
+.square-card {
+  grid-column: span 6;
+  aspect-ratio: auto !important;
+  /* Allow height to shrink */
+  min-height: 0;
+  /* Important for flex/grid shrinking */
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .deck-badge-left {
@@ -690,8 +748,8 @@ ul.clean li::before {
 }
 
 .hero-logo-icon {
-  height: 28px;
-  /* Reduced by 20% from 36px */
+  height: 24px;
+  /* Reduced by 30% from 36px */
   margin-bottom: 5px;
   /* Reduced from 6px */
   display: flex;
@@ -705,8 +763,8 @@ ul.clean li::before {
 
 .hero-title {
   display: block;
-  font-size: clamp(1.6rem, 3.6vw, 2.5rem);
-  /* Reduced by 20% from clamp(2rem, 4.5vw, 3.2rem) */
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  /* Reduced scale to fit frame */
   color: #ffffff;
   font-weight: 900;
   line-height: 0.95;
@@ -778,7 +836,8 @@ ul.clean li::before {
 .hero-product-wrap {
   position: relative;
   width: 100%;
-  max-width: 480px;
+  /* Reduced from 480px */
+  max-width: 620px;
   /* Reduced from 540px to fit 100% zoom */
   margin: 0 auto;
   perspective: 2000px;
@@ -915,11 +974,9 @@ ul.clean li::before {
   font-size: 0.65rem;
   /* Reduced font size */
   color: rgba(255, 255, 255, 0.55);
-  margin-top: -12px;
-  /* Adjusted margin */
-  /* Adjusted margin */
-  margin-bottom: 8px;
-  /* Reduced margin to lift cards */
+  margin-top: 0;
+  /* REMOVED negative margin to prevent overlap */
+  margin-bottom: 6px;
   backdrop-filter: blur(10px);
   letter-spacing: 0.01em;
 }
@@ -2852,22 +2909,39 @@ ul.clean li::before {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 
+/* Engine Callouts - Compact Fit */
+.engine-callout {
+  position: absolute;
+  /* Reduced width to prevent overlap */
+  width: 180px;
+  text-align: left;
+}
+
 .engine-callout .label {
   display: block;
-  color: var(--primary-cyan);
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.65rem;
+  /* Reduced from usually larger */
   font-weight: 700;
+  color: var(--primary-cyan);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 4px;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+  background: rgba(0, 10, 20, 0.8);
+  /* readable bg */
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 242, 255, 0.2);
+  width: fit-content;
 }
 
 .engine-callout .text {
   display: block;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
+  /* Compact text */
+  color: #ccc;
   line-height: 1.3;
-  color: rgba(255, 255, 255, 0.85);
+  padding-left: 4px;
 }
 
 .callout-arrow-svg {
