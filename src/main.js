@@ -89,10 +89,30 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     init();
     initMonitor();
+    initTimer();
   });
 } else {
   init();
   setTimeout(initMonitor, 100); // Small delay if already loaded
+  setTimeout(initTimer, 100);
+}
+
+function initTimer() {
+  const timers = document.querySelectorAll('.timer-countdown');
+  if (timers.length === 0) return;
+
+  let totalSeconds = 15 * 60; // 15 minutes
+
+  setInterval(() => {
+    totalSeconds--;
+    if (totalSeconds < 0) totalSeconds = 15 * 60;
+
+    const mins = Math.floor(totalSeconds / 60);
+    const secs = totalSeconds % 60;
+    const timeStr = `${mins}:${secs.toString().padStart(2, '0')}`;
+
+    timers.forEach(t => t.innerText = timeStr);
+  }, 1000);
 }
 
 
