@@ -111,7 +111,7 @@ const state = {
 
 // Make accessible to HTML onclick
 window.scopeAction = function (type) {
-  const toast = document.getElementById('scope-toast');
+  const toasts = document.querySelectorAll('.scope-toast');
   const now = new Date();
   const time = now.toLocaleTimeString('fr-FR');
 
@@ -121,7 +121,7 @@ window.scopeAction = function (type) {
     state.targetSpo2 = 98;
     msg = "O₂ administré";
     let start = state.spo2 > 95 ? 95 : state.spo2;
-    animateValue('val-spo2', start, 98, 2000, 0);
+    animateValue('.val-spo2', start, 98, 2000, 0);
     state.spo2 = 98;
   } else if (type === 'remplissage') {
     state.targetNibpSys = 110;
@@ -133,24 +133,26 @@ window.scopeAction = function (type) {
   } else if (type === 'insuline') {
     state.targetFc = 85;
     msg = "Insulinothérapie débutée";
-    animateValue('val-fc', state.fc, 85, 2000, 0);
+    animateValue('.val-fc', state.fc, 85, 2000, 0);
     state.fc = 85;
   }
 
   // Visual feedback
-  if (toast) {
+  toasts.forEach(toast => {
     toast.innerText = `[${time}] ${msg}`;
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 3000);
-  }
+  });
 };
 
-function animateValue(id, start, end, duration, type) {
-  const obj = document.getElementById(id);
-  if (!obj) return;
+function animateValue(selector, start, end, duration, type) {
+  const objects = document.querySelectorAll(selector);
+  if (objects.length === 0) return;
 
-  obj.classList.add('pulse-anim');
-  setTimeout(() => obj.classList.remove('pulse-anim'), 300);
+  objects.forEach(obj => {
+    obj.classList.add('pulse-anim');
+    setTimeout(() => obj.classList.remove('pulse-anim'), 300);
+  });
 
   const range = end - start;
   let current = start;
@@ -161,7 +163,7 @@ function animateValue(id, start, end, duration, type) {
 
   const timer = setInterval(function () {
     current += increment;
-    obj.innerText = current;
+    objects.forEach(obj => obj.innerText = current);
     if (current == end) {
       clearInterval(timer);
     }
@@ -169,10 +171,13 @@ function animateValue(id, start, end, duration, type) {
 }
 
 function updateBP(s1, d1, s2, d2) {
-  const obj = document.getElementById('val-nibp');
-  if (!obj) return;
-  obj.classList.add('pulse-anim');
-  setTimeout(() => obj.classList.remove('pulse-anim'), 300);
+  const objects = document.querySelectorAll('.val-nibp');
+  if (objects.length === 0) return;
+
+  objects.forEach(obj => {
+    obj.classList.add('pulse-anim');
+    setTimeout(() => obj.classList.remove('pulse-anim'), 300);
+  });
 
   let s = s1;
   let d = d1;
@@ -181,7 +186,7 @@ function updateBP(s1, d1, s2, d2) {
     if (s != s2) { s += (s < s2 ? 1 : -1); changed = true; }
     if (d != d2 && s % 2 === 0) { d += (d < d2 ? 1 : -1); changed = true; }
 
-    obj.innerText = `${s}/${d}`;
+    objects.forEach(obj => obj.innerText = `${s}/${d}`);
     if (!changed) clearInterval(timer);
   }, 100);
 }
@@ -189,75 +194,117 @@ function updateBP(s1, d1, s2, d2) {
 
 // Canvas Animations
 function initMonitor() {
-  const ecgCanvas = document.getElementById('ecg-canvas');
-  const plethCanvas = document.getElementById('pleth-canvas');
+  const monitors = document.querySelectorAll('.live-monitor');
 
-  if (!ecgCanvas || !plethCanvas) {
+  if (monitors.length === 0) {
     // Retry if not found immediately (e.g. reveal animation delay)
     setTimeout(initMonitor, 500);
     return;
   }
 
-  // Robust resize function
-  function resize() {
-    const parentE = ecgCanvas.parentElement;
-    const parentP = plethCanvas.parentElement;
+  monitors.forEach(monitor => {
+    const ecgCanvas = monitor.querySelector('.ecg-canvas');
+    const plethCanvas = monitor.querySelector('.pleth-canvas');
 
-    // Get visible size
-    const rectE = parentE.getBoundingClientRect();
-    const rectP = parentP.getBoundingClientRect();
+    if (!ecgCanvas || !plethCanvas) return;
 
-    // Fallback if needed but try to use clientWidth first
-    const wE = rectE.width || parentE.clientWidth;
-    const hE = rectE.height || parentE.clientHeight;
-    const wP = rectP.width || parentP.clientWidth;
-    const hP = rectP.height || parentP.clientHeight;
+    // Robust resize function
+    function resize() {
+      const parentE = ecgCanvas.parentElement;
+      const parentP = plethCanvas.parentElement;
 
-    if (wE > 0 && hE > 0) {
-      ecgCanvas.width = wE;
-      ecgCanvas.height = hE;
+      const rectE = parentE.getBoundingClientRect();
+      const rectP = parentP.getBoundingClientRect();
+
+      const wE = rectE.width || parentE.clientWidth;
+      const hE = rectE.height || parentE.clientHeight;
+      const wP = rectP.width || parentP.clientWidth;
+      const hP = rectP.height || parentP.clientHeight;
+
+      if (wE > 0 && hE > 0) {
+        ecgCanvas.width = wE;
+        ecgCanvas.height = hE;
+      }
+      if (wP > 0 && hP > 0) {
+        plethCanvas.width = wP;
+        plethCanvas.height = hP;
+      }
     }
-    if (wP > 0 && hP > 0) {
-      plethCanvas.width = wP;
-      plethCanvas.height = hP;
+
+    resize();
+    setTimeout(resize, 100);
+    setTimeout(resize, 1000);
+    window.addEventListener('resize', resize);
+
+    const ctxE = ecgCanvas.getContext('2d');
+    const ctxP = plethCanvas.getContext('2d');
+
+    let scanX = 0;
+    let speed = 1.4;
+
+    function loop() {
+      const hE = ecgCanvas.height;
+      const midE = hE / 2 + 25;
+      const hP = plethCanvas.height;
+      const midP = hP / 2 + 15;
+
+      const scanWidth = 14;
+      if (scanX + scanWidth < ecgCanvas.width) {
+        ctxE.clearRect(scanX, 0, scanWidth, hE);
+        ctxP.clearRect(scanX, 0, scanWidth, hP);
+      }
+
+      const scaleT = 20;
+
+      // Draw ECG
+      ctxE.beginPath();
+      ctxE.strokeStyle = '#00ff00';
+      ctxE.lineWidth = 1.5;
+      const yE_prev = midE + getECG((scanX - speed) * scaleT);
+      const yE_curr = midE + getECG(scanX * scaleT);
+      ctxE.moveTo(scanX - speed, yE_prev);
+      ctxE.lineTo(scanX, yE_curr);
+      ctxE.stroke();
+
+      // Draw PLETH
+      ctxP.beginPath();
+      ctxP.strokeStyle = '#00ffff';
+      ctxP.lineWidth = 1.5;
+      const yP_prev = midP + getPLETH((scanX - speed) * scaleT);
+      const yP_curr = midP + getPLETH(scanX * scaleT);
+      ctxP.moveTo(scanX - speed, yP_prev);
+      ctxP.lineTo(scanX, yP_curr);
+      ctxP.stroke();
+
+      scanX += speed;
+      if (scanX >= ecgCanvas.width) {
+        scanX = 0;
+        ctxE.clearRect(0, 0, speed + 10, hE);
+        ctxP.clearRect(0, 0, speed + 10, hP);
+      }
+
+      // Update text values per monitor
+      const elFc = monitor.querySelector('.val-fc');
+      const elSpo2 = monitor.querySelector('.val-spo2');
+      const elNibp = monitor.querySelector('.val-nibp');
+      if (elFc && elFc.innerText != state.fc) elFc.innerText = state.fc;
+      if (elSpo2 && elSpo2.innerText != state.spo2) elSpo2.innerText = state.spo2;
+      if (elNibp && elNibp.innerText != `${state.nibpSys}/${state.nibpDia}`) elNibp.innerText = `${state.nibpSys}/${state.nibpDia}`;
+
+      requestAnimationFrame(loop);
     }
-  }
 
-  // Initial resize
-  resize();
+    requestAnimationFrame(loop);
+  });
 
-  // Resize again after delays to catch layout shifts
-  setTimeout(resize, 100);
-  setTimeout(resize, 500);
-  setTimeout(resize, 1000);
-  setTimeout(resize, 2000);
-
-  window.addEventListener('resize', resize);
-
-  const ctxE = ecgCanvas.getContext('2d');
-  const ctxP = plethCanvas.getContext('2d');
-
-  let x = 0;
-  let speed = 1.4; // Reduced speed by 30%
-
-  // Generators
-  // Generators
+  // Common generators
   function getECG(t) {
-    const period = 800; // ms
+    const period = 800;
     const localT = t % period;
     let y = 0;
-
-    // Tachycardia style: Sharp spikes
-    if (localT > 180 && localT < 210) {
-      y -= 90 * Math.sin((localT - 180) / 30 * Math.PI);
-    }
-
-    // Tiny T wave
+    if (localT > 180 && localT < 210) y -= 90 * Math.sin((localT - 180) / 30 * Math.PI);
     if (localT > 300 && localT < 450) y -= 12 * Math.sin((localT - 300) / 150 * Math.PI);
-
-    // Tiny P wave
     if (localT > 50 && localT < 150) y -= 4 * Math.sin((localT - 50) / 100 * Math.PI);
-
     return y;
   }
 
@@ -265,80 +312,8 @@ function initMonitor() {
     const period = 800;
     const localT = t % period;
     let y = 0;
-
-    if (localT < 300) {
-      y -= Math.sin(localT / 300 * Math.PI) * 45;
-    } else {
-      y -= Math.cos((localT - 300) / 500 * Math.PI / 2) * 45; // Smooth decay
-    }
+    if (localT < 300) y -= Math.sin(localT / 300 * Math.PI) * 45;
+    else y -= Math.cos((localT - 300) / 500 * Math.PI / 2) * 45;
     return y;
   }
-
-  let lastTime = 0;
-  let scanX = 0;
-
-  function loop(timestamp) {
-    if (!lastTime) lastTime = timestamp;
-
-    const hE = ecgCanvas.height;
-    const midE = hE / 2 + 25;
-    const hP = plethCanvas.height;
-    const midP = hP / 2 + 15;
-
-    const scanWidth = 14;
-    // Clear the bar ahead
-    if (scanX + scanWidth < ecgCanvas.width) {
-      ctxE.clearRect(scanX, 0, scanWidth, hE);
-      ctxP.clearRect(scanX, 0, scanWidth, hP);
-    }
-
-    // Zoom factor increased for density
-    const scaleT = 20;
-
-    // Draw ECG
-    ctxE.beginPath();
-    ctxE.strokeStyle = '#00ff00';
-    ctxE.lineWidth = 1.5;
-
-    const yE_prev = midE + getECG((scanX - speed) * scaleT);
-    const yE_curr = midE + getECG(scanX * scaleT);
-
-    ctxE.moveTo(scanX - speed, yE_prev);
-    ctxE.lineTo(scanX, yE_curr);
-    ctxE.stroke();
-
-    // Draw PLETH
-    ctxP.beginPath();
-    ctxP.strokeStyle = '#00ffff';
-    ctxP.lineWidth = 1.5;
-
-    const yP_prev = midP + getPLETH((scanX - speed) * scaleT);
-    const yP_curr = midP + getPLETH(scanX * scaleT);
-
-    ctxP.moveTo(scanX - speed, yP_prev);
-    ctxP.lineTo(scanX, yP_curr);
-    ctxP.stroke();
-
-    scanX += speed;
-    if (scanX >= ecgCanvas.width) {
-      scanX = 0;
-      // Clean start
-      ctxE.clearRect(0, 0, speed + 10, hE);
-      ctxP.clearRect(0, 0, speed + 10, hP);
-    }
-
-    // Update text values
-    if (state.fc) {
-      const elFc = document.getElementById('val-fc');
-      const elSpo2 = document.getElementById('val-spo2');
-      const elNibp = document.getElementById('val-nibp');
-      if (elFc && elFc.innerText != state.fc) elFc.innerText = state.fc;
-      if (elSpo2 && elSpo2.innerText != state.spo2) elSpo2.innerText = state.spo2;
-      if (elNibp && elNibp.innerText != `${state.nibpSys}/${state.nibpDia}`) elNibp.innerText = `${state.nibpSys}/${state.nibpDia}`;
-    }
-
-    requestAnimationFrame(loop);
-  }
-
-  requestAnimationFrame(loop);
 }

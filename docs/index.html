@@ -11,7 +11,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap"
     rel="stylesheet">
-  <script type="module" crossorigin src="./assets/index-CRuKUfMa.js"></script>
+  <script type="module" crossorigin src="./assets/index-CNyFY1v8.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/index-sWlQPqWg.css">
 </head>
 
@@ -158,6 +158,53 @@
               </div>
               <img src="doctiplay_screen_actual.png" alt="Interface Simulateur"
                 style="display: block; width: 100%; height: auto; opacity: 1;">
+
+              <!-- LIVE MONITOR OVERLAY (DUPLICATED) -->
+              <div class="live-monitor no-print">
+                <div class="scope-header">
+                  <div class="live-badge-anim"><span>●</span> LIVE</div>
+                  <div class="scope-time">14:58:22</div>
+                </div>
+
+                <div class="scope-content">
+                  <div class="scope-graphs">
+                    <div class="graph-row">
+                      <span class="graph-label green-text">II 1mV</span>
+                      <canvas class="ecg-canvas"></canvas>
+                    </div>
+                    <div class="graph-row">
+                      <span class="graph-label cyan-text">PLETH</span>
+                      <canvas class="pleth-canvas"></canvas>
+                    </div>
+                  </div>
+
+                  <div class="scope-values">
+                    <div class="val-box">
+                      <span class="val-label green-text">FC <small>bpm</small></span>
+                      <span class="val-num green-text val-fc">90</span>
+                    </div>
+                    <div class="val-box">
+                      <span class="val-label cyan-text">SpO₂ <small>%</small></span>
+                      <span class="val-num cyan-text val-spo2">99</span>
+                    </div>
+                    <div class="val-box">
+                      <span class="val-label red-text">NIBP <small>mmHg</small></span>
+                      <span class="val-num red-text val-nibp">100/60</span>
+                      <span class="val-sub red-text">(73)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- INTERACTIONS -->
+                <div class="scope-actions">
+                  <button onclick="scopeAction('o2')">O₂</button>
+                  <button onclick="scopeAction('remplissage')">Remplissage</button>
+                  <button onclick="scopeAction('insuline')">Insuline</button>
+                </div>
+
+                <!-- NOTIFICATION TOAST -->
+                <div class="scope-toast"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -624,7 +671,7 @@
                 style="display: block; width: 100%; height: auto; opacity: 1;">
 
               <!-- LIVE MONITOR OVERLAY -->
-              <div id="live-monitor" class="no-print">
+              <div class="live-monitor no-print">
                 <div class="scope-header">
                   <div class="live-badge-anim"><span>●</span> LIVE</div>
                   <div class="scope-time">14:58:22</div>
@@ -634,26 +681,26 @@
                   <div class="scope-graphs">
                     <div class="graph-row">
                       <span class="graph-label green-text">II 1mV</span>
-                      <canvas id="ecg-canvas"></canvas>
+                      <canvas class="ecg-canvas"></canvas>
                     </div>
                     <div class="graph-row">
                       <span class="graph-label cyan-text">PLETH</span>
-                      <canvas id="pleth-canvas"></canvas>
+                      <canvas class="pleth-canvas"></canvas>
                     </div>
                   </div>
 
                   <div class="scope-values">
                     <div class="val-box">
                       <span class="val-label green-text">FC <small>bpm</small></span>
-                      <span class="val-num green-text" id="val-fc">90</span>
+                      <span class="val-num green-text val-fc">90</span>
                     </div>
                     <div class="val-box">
                       <span class="val-label cyan-text">SpO₂ <small>%</small></span>
-                      <span class="val-num cyan-text" id="val-spo2">99</span>
+                      <span class="val-num cyan-text val-spo2">99</span>
                     </div>
                     <div class="val-box">
                       <span class="val-label red-text">NIBP <small>mmHg</small></span>
-                      <span class="val-num red-text" id="val-nibp">100/60</span>
+                      <span class="val-num red-text val-nibp">100/60</span>
                       <span class="val-sub red-text">(73)</span>
                     </div>
                   </div>
@@ -667,7 +714,7 @@
                 </div>
 
                 <!-- NOTIFICATION TOAST -->
-                <div id="scope-toast" class="scope-toast"></div>
+                <div class="scope-toast"></div>
               </div>
             </div>
           </div>
