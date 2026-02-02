@@ -327,6 +327,14 @@ section::after {
   /* Unified baseline */
   align-items: center;
   width: 100%;
+  overflow-y: auto;
+  /* Allow scrolling if content overflows */
+  scrollbar-width: none;
+  /* Hide scrollbar for cleaner look */
+}
+
+.slide-content::-webkit-scrollbar {
+  display: none;
 }
 
 /* Progress bar */
