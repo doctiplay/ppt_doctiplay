@@ -28,8 +28,8 @@ function init() {
       }
     });
   }, {
-    threshold: 0.1,
-    root: container // Explicitly set the root as the snap container
+    threshold: 0.1
+    // root: container -- Removing explicit root fixes reveal triggers
   });
 
   revealElements.forEach(el => observer.observe(el));
