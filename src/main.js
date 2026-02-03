@@ -40,21 +40,6 @@ function init() {
     el.classList.add('active');
   });
 
-  // Keyboard navigation
-  if (container) {
-    window.addEventListener('keydown', (e) => {
-      const viewH = container.clientHeight;
-      if (e.key === 'ArrowDown' || e.key === 'PageDown') {
-        e.preventDefault();
-        container.scrollBy({ top: viewH, left: 0, behavior: 'smooth' });
-      }
-      if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-        e.preventDefault();
-        container.scrollBy({ top: -viewH, left: 0, behavior: 'smooth' });
-      }
-    });
-  }
-
   // Smooth scroll for anchors
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', (e) => {
@@ -66,6 +51,7 @@ function init() {
       }
     });
   });
+
   // PDF Export
   const pdfBtn = document.getElementById('pdf-export-btn');
   if (pdfBtn) {

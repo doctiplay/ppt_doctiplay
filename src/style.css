@@ -28,6 +28,7 @@
   --report-bg: #0c1220;
   --report-border: rgba(0, 242, 255, 0.15);
   --summary-bg: rgba(255, 255, 255, 0.03);
+  --header-h: 120px;
 }
 
 /* Shared Component Classes */
@@ -51,7 +52,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  overflow-y: auto;
+  overflow: hidden !important;
 }
 
 .report-section {
@@ -86,32 +87,76 @@
 }
 
 /* Print Overrides */
+@page {
+  size: 16in 9in;
+  margin: 0;
+}
+
 @media print {
-  section {
-    height: auto !important;
-    min-height: initial !important;
-    overflow: visible !important;
-    page-break-after: always;
-    padding: 20px !important;
+  * {
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
   }
 
-  section::after,
-  section::before {
+  @page {
+    size: 16in 9in;
+    margin: 0;
+  }
+
+  body {
+    background: var(--bg-dark) !important;
+  }
+
+  .topbar,
+  .progress-bar,
+  .scroll-arrow,
+  .btn-top,
+  .top-actions,
+  .nav {
     display: none !important;
   }
 
-  .report-doc {
-    width: 100% !important;
-    height: auto !important;
-    box-shadow: none !important;
-    border: 1px solid #ccc !important;
-    overflow: visible !important;
+  section,
+  .slide {
+    height: 100vh !important;
+    width: 100vw !important;
+    overflow: hidden !important;
+    break-after: page !important;
+    page-break-after: always !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
   }
 
-  .snap-container {
-    height: auto !important;
-    overflow: visible !important;
+  .safe {
+    padding: 48px !important;
+    /* Global Print Safe Zone */
+    max-width: none !important;
+    width: 100% !important;
+    height: 100% !important;
   }
+
+  /* Specific adjustment for hero mockup in print */
+  .hero-product-wrap {
+    transform: scale(0.95) !important;
+  }
+
+  section::after,
+  section::before,
+  .slide::after,
+  .slide::before {
+    display: none !important;
+  }
+}
+
+.report-doc {
+  width: 100% !important;
+  height: auto !important;
+  box-shadow: none !important;
+  border: 1px solid #ccc !important;
+  overflow: visible !important;
 }
 
 * {
@@ -125,11 +170,19 @@
   display: none;
 }
 
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden !important;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   background: var(--bg-dark);
   color: var(--text-white);
-  overflow-x: hidden;
   line-height: 1.5;
   font-size: 0.88rem;
 }
@@ -151,13 +204,18 @@ body::before {
 /* Top bar */
 .topbar {
   position: fixed;
-  top: 32px;
-  left: 20px;
-  right: 20px;
-  z-index: 250;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 1000;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
+  padding: 0 40px;
+  background: rgba(5, 10, 20, 0.4);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   pointer-events: none;
 }
 
@@ -264,51 +322,73 @@ body::before {
   color: #ffffff;
 }
 
-/* Scrollytelling */
+/* Scrollytelling & Presentation Engine */
 .snap-container {
   height: 100vh;
+  width: 100vw;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  /* Strict boundary enforcement */
+  scrollbar-width: none;
+  position: relative;
+  /* Changed from fixed */
 }
 
-section {
-  height: 100vh;
-  width: 100vw;
+.snap-container::-webkit-scrollbar {
+  display: none;
+}
+
+section,
+.slide,
+.pitch-slide {
+  height: 100vh !important;
+  width: 100vw !important;
   scroll-snap-align: start;
+  /* Strict slide-by-slide */
+  position: relative;
+  overflow: hidden !important;
+  /* STRICT NO INTERNAL SCROLL */
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: var(--bg-dark);
+}
+
+
+
+/* Safe Area - Content Container */
+.safe {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 60px;
+  /* Padding latéral */
+  padding-top: var(--header-h);
+  /* Avoid header collision */
   display: flex;
   flex-direction: column;
-  padding: var(--frame-top) var(--frame-side) var(--frame-bottom);
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
   position: relative;
-  overflow: hidden;
+  z-index: 10;
 }
 
-/* Slide Frame - Unified Gabarit */
-section::after {
-  content: "";
-  position: absolute;
-  top: var(--frame-top);
-  left: var(--frame-side);
-  right: var(--frame-side);
-  bottom: var(--frame-bottom);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: var(--radius-xl);
-  pointer-events: none;
-  z-index: 200;
-}
-
-/* Standard Structure */
+/* Compatibility with .inner */
 .inner {
   width: 100%;
   max-width: var(--maxw);
   margin: 0 auto;
   height: 100%;
+  padding: 0 60px;
+  padding-top: var(--header-h);
   display: flex;
   flex-direction: column;
-  padding: 40px 60px;
-  /* Safe area inside frame */
+  justify-content: center;
+  align-items: center;
 }
 
 .slide-header {
@@ -345,7 +425,7 @@ section::after {
 /* Progress bar */
 .progress-bar {
   position: fixed;
-  right: 26px;
+  right: 50px;
   top: 50%;
   transform: translateY(-50%);
   width: 4px;
@@ -1081,11 +1161,32 @@ ul.clean li::before {
   color: rgba(255, 255, 255, 0.65);
 }
 
-/* Pitch Deck Slides - Layout Correction */
-.pitch-slide {
+
+
+.slide-hero {
+  height: 100vh !important;
+  width: 100vw !important;
+  display: flex !important;
+  flex-direction: column !important;
   justify-content: center !important;
-  padding-top: 115px !important;
-  /* Slightly more room for bottom content */
+  /* Align with headers */
+  align-items: center !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+#slide-1 .safe {
+  padding-top: 80px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.slide-hero::after {
+  display: none !important;
+  /* Hide frame on hero if requested */
 }
 
 .ultra-title {
@@ -3082,5 +3183,324 @@ ul.clean li::before {
 
   body::before {
     display: none !important;
+  }
+}
+
+/* ============================================================
+   MOBILE RESPONSIVENESS (Smartphone compatibility)
+   ============================================================ */
+@media (max-width: 768px) {
+  :root {
+    --frame-side: 20px;
+    --header-h: 90px;
+    --maxw: 100%;
+  }
+
+  /* Reset body/html for better touch experience */
+  html,
+  body {
+    overflow: hidden !important;
+  }
+
+  /* Compact Topbar */
+  .topbar {
+    padding: 0 15px;
+    height: 70px;
+    grid-template-columns: auto 1fr;
+  }
+
+  .nav {
+    display: none !important;
+    /* Hide menu links on mobile */
+  }
+
+  .top-actions {
+    justify-self: end;
+  }
+
+  .btn-top span {
+    display: none;
+    /* Hide button text, keep icon */
+  }
+
+  .brand-logo {
+    height: 18px;
+  }
+
+  .logo-text {
+    font-size: 0.8rem;
+  }
+
+  /* Slide Scaling & Layout */
+  .safe {
+    padding-left: var(--frame-side) !important;
+    padding-right: var(--frame-side) !important;
+    padding-top: var(--header-h) !important;
+    padding-bottom: 20px !important;
+  }
+
+  .ultra-title {
+    font-size: 1.4rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .subtitle {
+    font-size: 0.8rem !important;
+    white-space: normal !important;
+  }
+
+  /* Hero Slide Adjustments */
+  .slide-hero .inner {
+    transform: scale(0.9) translateY(-20px) !important;
+  }
+
+  .hero-title {
+    font-size: 2rem !important;
+  }
+
+  .hero-product-wrap {
+    max-width: 280px !important;
+  }
+
+  /* Hide the info badge on mobile or move it below */
+  .deck-badge-left {
+    display: none !important;
+  }
+
+  /* Grid Conversions */
+  .slide-content grid,
+  [style*="display: grid"],
+  [style*="display:grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+
+  /* Specific Grid Fixes */
+  #slide-scenarios [style*="grid-template-columns: repeat(3, 1fr)"],
+  #slide-test-vide [style*="grid-template-columns: repeat(5, 1fr)"],
+  #slide-test-vide [style*="grid-template-columns: repeat(4, 1fr)"],
+  #slide-implementation [style*="grid-template-columns: 1fr 1fr 1fr"],
+  [style*="grid-template-columns: 220px 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Dashboard / Complex layouts */
+  .roadmap-block {
+    grid-template-columns: 1fr !important;
+  }
+
+  .roadmap-arrow {
+    transform: rotate(90deg);
+    padding: 10px 0 !important;
+  }
+
+  /* UI Cards */
+  .card,
+  .feature-card {
+    min-height: auto !important;
+    padding: 15px !important;
+  }
+
+  .frise-step {
+    flex-direction: row !important;
+    text-align: left !important;
+    gap: 10px !important;
+  }
+
+  /* Allow internal scrolling in slide-content if really needed on mobile */
+  .slide-content {
+    overflow-y: auto !important;
+    max-height: calc(100vh - var(--header-h) - 40px);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Progress bar thickness */
+  .progress-bar {
+    height: 3px;
+  }
+}
+
+/* ============================================================
+   MOBILE CLEANUP (Deep fixes for overlapping & scaling)
+   ============================================================ */
+@media (max-width: 580px) {
+  :root {
+    --header-h: 70px;
+    --frame-side: 15px;
+  }
+
+  /* Reset layout constraints */
+  .safe {
+    padding-top: var(--header-h) !important;
+    padding-bottom: 60px !important;
+    /* Space for scroll arrow */
+    justify-content: flex-start !important;
+    overflow-y: auto !important;
+  }
+
+  /* Fix the transform scale on hero and other slides */
+  .inner.center {
+    transform: none !important;
+    width: 100% !important;
+    padding: 10px !important;
+  }
+
+  .ultra-title {
+    font-size: 1.15rem !important;
+    margin-bottom: 8px !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .subtitle {
+    font-size: 0.75rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 15px !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+
+  /* FORCE ALL GRIDS TO 1 COLUMN */
+  .card-grid,
+  .scenarios-grid,
+  .protocol-steps,
+  .kpi-grid,
+  .deck-cards,
+  [style*="display: grid"],
+  [style*="display:grid"] {
+    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  /* Cards fixes */
+  .card,
+  .feature-card,
+  .kpi-card,
+  .scenario-card,
+  .step-card,
+  .square-card {
+    width: 100% !important;
+    min-height: auto !important;
+    padding: 16px !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
+
+  .card h3,
+  .feature-card h3 {
+    font-size: 0.9rem !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Fix Slide Moteur (Engine) - Complex overlaps */
+  #slide-moteur .current-view-container {
+    padding: 0 !important;
+    transform: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  #slide-moteur .engine-callout {
+    position: static !important;
+    margin: 10px 0 !important;
+    width: 100% !important;
+    border-left: 2px solid var(--primary-cyan) !important;
+    padding-left: 12px !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border-radius: 4px !important;
+  }
+
+  #slide-moteur .callout-arrow-svg {
+    display: none !important;
+    /* Hide confusing arrows on mobile */
+  }
+
+  #slide-moteur .tablet-frame {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 20px auto !important;
+  }
+
+  /* Specific elements scaling */
+  .freins-pill-wrap {
+    margin-bottom: 20px !important;
+  }
+
+  .freins-pill {
+    font-size: 0.65rem !important;
+    padding: 8px 12px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Timeline Slide fixes */
+  .timeline-container,
+  .roadmap-block {
+    flex-direction: column !important;
+    gap: 30px !important;
+    padding-left: 20px !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .timeline-item,
+  .roadmap-step {
+    width: 100% !important;
+    text-align: left !important;
+  }
+
+  .timeline-line,
+  .roadmap-arrow {
+    display: none !important;
+  }
+
+  /* Monitoring / Dashboard fix */
+  .dashboard-main {
+    flex-direction: column !important;
+  }
+
+  /* Footer & Navigation */
+  .topbar {
+    height: 60px !important;
+  }
+
+  .scroll-arrow {
+    bottom: 15px !important;
+  }
+
+  /* Hide tablet and complex overlays on very small height screens */
+  @media (max-height: 500px) {
+    .hero-visual {
+      display: none !important;
+    }
+  }
+}
+
+/* Allow scrolling within slides on small mobiles if content exceeds viewport */
+@media (max-width: 580px) {
+
+  section,
+  .slide,
+  .pitch-slide {
+    overflow-y: auto !important;
+    /* Enable scroll if content is too tall */
+    height: auto !important;
+    min-height: 100vh !important;
+    scroll-snap-align: start;
+  }
+
+  .snap-container {
+    scroll-snap-type: y proximity !important;
+    /* Less strict on mobile to allow internal scroll */
+  }
+
+  /* Prevent safe container from forcing 100% height when we want it to grow */
+  .safe {
+    height: auto !important;
+    min-height: 100vh !important;
+    display: block !important;
+    /* Stack naturally */
   }
 }
