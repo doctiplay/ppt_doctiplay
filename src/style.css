@@ -3677,3 +3677,62 @@ ul.clean li::before {
     color: var(--primary-cyan) !important;
   }
 }
+
+/* Slide 7 (Scenarios) Mobile Optimization - Compact Vignettes */
+@media (max-width: 768px) {
+  #slide-scenarios .feature-card {
+    min-height: auto !important;
+    height: auto !important;
+    margin-bottom: 10px !important;
+    box-shadow: none !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    /* Lighter border */
+  }
+
+  /* Main Content Wrapper */
+  #slide-scenarios .feature-card>div:first-child {
+    padding: 10px 12px !important;
+    /* Reduce padding from 15px */
+    aspect-ratio: auto !important;
+    /* Kill the 1.5 aspect ratio */
+    height: auto !important;
+    gap: 8px !important;
+    /* Reduce gap between top/bottom sections */
+  }
+
+  /* Compact header */
+  #slide-scenarios h3 {
+    font-size: 1rem !important;
+    margin-bottom: 2px !important;
+  }
+
+  #slide-scenarios p {
+    font-size: 0.7rem !important;
+    margin-top: 2px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* Compact lists grid inside the card */
+  /* This targets the div containing Objectifs and Vigilance */
+  #slide-scenarios .feature-card>div:first-child>div:last-child {
+    gap: 4px !important;
+  }
+
+  /* Specific internal text divs (Objectifs/Vigilance) */
+  #slide-scenarios .feature-card [style*="font-size: 0.6rem"] {
+    font-size: 0.65rem !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Reduce margins on headers 'Objectifs' etc */
+  #slide-scenarios .feature-card [style*="margin-bottom: 2px"] {
+    margin-bottom: 0 !important;
+  }
+
+  /* Footer bar */
+  #slide-scenarios .feature-card>div:last-child {
+    padding: 6px 12px !important;
+    margin-top: 0 !important;
+  }
+}
