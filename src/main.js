@@ -52,11 +52,24 @@ function init() {
     });
   });
 
-  // PDF Export Placeholder (Disabled)
+  // PDF Export Bubble logic
   const pdfBtn = document.getElementById('pdf-export-btn');
   if (pdfBtn) {
-    pdfBtn.addEventListener('click', () => {
-      // Do nothing, visual movement is native or CSS-based
+    const bubble = document.createElement('div');
+    bubble.className = 'pdf-bubble';
+    bubble.innerText = 'Le mode PDF est en cours de mise-à-jour';
+    pdfBtn.parentElement.appendChild(bubble);
+
+    pdfBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      bubble.classList.add('show');
+      setTimeout(() => {
+        bubble.classList.remove('show');
+      }, 3000);
+    });
+
+    document.addEventListener('click', () => {
+      bubble.classList.remove('show');
     });
   }
 }
