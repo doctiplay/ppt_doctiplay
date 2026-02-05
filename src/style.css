@@ -3736,3 +3736,51 @@ ul.clean li::before {
     margin-top: 0 !important;
   }
 }
+
+/* FINAL OVERRIDE FOR SLIDE 6 TABLE LAYOUT MOBILE */
+@media (max-width: 768px) {
+
+  .students-header-row,
+  #slide-trace .dashboard-row {
+    display: grid !important;
+    /* Fixed column track to force single row */
+    grid-template-columns: 1.2fr 0.6fr 0.6fr 0.8fr 0.6fr !important;
+    grid-auto-flow: row !important;
+    /* Items fill the row tracks */
+    grid-template-rows: 1fr !important;
+    /* One single row */
+    gap: 2px !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 8px 4px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Reset children to flow naturally in grid cells */
+  .students-header-row>div,
+  #slide-trace .dashboard-row>div {
+    grid-area: auto !important;
+    /* Cancel named areas */
+    grid-column: auto !important;
+    grid-row: auto !important;
+    margin: 0 !important;
+    width: auto !important;
+  }
+
+  /* Center the score columns explicitly */
+  .students-header-row>div:nth-child(2),
+  .students-header-row>div:nth-child(3),
+  .students-header-row>div:nth-child(4),
+  #slide-trace .dashboard-row>div:nth-child(2),
+  #slide-trace .dashboard-row>div:nth-child(3),
+  #slide-trace .dashboard-row>div:nth-child(4) {
+    text-align: center !important;
+    justify-self: center !important;
+  }
+
+  /* Reduce font size of header to fit */
+  .students-header-row>div {
+    font-size: 0.5rem !important;
+    letter-spacing: 0 !important;
+  }
+}
