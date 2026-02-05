@@ -330,6 +330,10 @@ body::before {
   color: #ffffff;
 }
 
+.btn-top:active {
+  transform: scale(0.96);
+}
+
 /* Scrollytelling & Presentation Engine */
 .snap-container {
   height: 100vh;

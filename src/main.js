@@ -52,11 +52,11 @@ function init() {
     });
   });
 
-  // PDF Export Placeholder
+  // PDF Export Placeholder (Disabled)
   const pdfBtn = document.getElementById('pdf-export-btn');
   if (pdfBtn) {
     pdfBtn.addEventListener('click', () => {
-      alert("L'export PDF est en cours de finition et sera disponible prochainement.");
+      // Do nothing, visual movement is native or CSS-based
     });
   }
 }
