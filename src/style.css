@@ -3403,12 +3403,140 @@ ul.clean li::before {
     width: 100% !important;
   }
 
-  /* Slide 6 - Trace */
+  /* Slide 6 - Trace Mobile Fixes */
   .students-table {
     display: block !important;
     overflow-x: auto !important;
     width: 100% !important;
   }
+
+  /* Compact Student Cards (Vignettes) */
+  #slide-trace .dashboard-row {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 10px !important;
+    gap: 8px !important;
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 6px !important;
+    font-size: 0.7rem !important;
+  }
+
+  #slide-trace .dashboard-row>div:first-child {
+    /* Avatar + Name */
+    width: 100% !important;
+    justify-content: space-between !important;
+    margin-bottom: 5px !important;
+  }
+
+  /* Scores container inside row to be horizontal */
+  #slide-trace .dashboard-row {
+    position: relative;
+  }
+
+  /* Select the scores divs (2nd, 3rd, 4th children) and put them in a row */
+  /* Since we can't easily group them without changing HTML, we will use grid for the row */
+
+  #slide-trace .dashboard-row {
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+    /* Name | Last Access */
+    grid-template-rows: auto auto !important;
+    /* Top: Name/Access, Bottom: Scores */
+    gap: 10px !important;
+    align-items: center !important;
+  }
+
+  /* Name Section */
+  #slide-trace .dashboard-row>div:nth-child(1) {
+    grid-column: 1 / -1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+  }
+
+  /* Last Access (moved to top right via order or absolute if needed, but grid is easier) */
+  #slide-trace .dashboard-row>div:nth-child(5) {
+    grid-column: 2 / 3 !important;
+    grid-row: 1 / 2 !important;
+    justify-self: end !important;
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+  }
+
+  /* Hide the header names for scores on mobile if needed, or keep simpler */
+
+  /* The scores (2, 3, 4) */
+  #slide-trace .dashboard-row>div:nth-child(2),
+  #slide-trace .dashboard-row>div:nth-child(3),
+  #slide-trace .dashboard-row>div:nth-child(4) {
+    display: inline-flex !important;
+    justify-content: center !important;
+    background: rgba(0, 0, 0, 0.2) !important;
+    padding: 4px 8px !important;
+    border-radius: 4px !important;
+    font-size: 0.65rem !important;
+  }
+
+  /* Wrapper for scores to aligned them? No wrapper in HTML. 
+     We can force them to float or inline-grid.
+     Actually, let's use a sub-grid hack or just display block.
+  */
+
+  #slide-trace .dashboard-row {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  #slide-trace .dashboard-row>div:nth-child(1) {
+    width: 100% !important;
+    margin-bottom: 4px !important;
+  }
+
+  /* Create a faux-row for scores using flex order or specific styling is hard without wrapper.
+     Let's try a grid layout that mimics the "Thomas B" insight card.
+  */
+
+  #slide-trace .dashboard-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr 1fr !important;
+    grid-template-areas:
+      "name name name date"
+      "score1 score2 score3 ." !important;
+    padding: 8px 12px !important;
+  }
+
+  #slide-trace .dashboard-row>div:nth-child(1) {
+    grid-area: name;
+  }
+
+  #slide-trace .dashboard-row>div:nth-child(5) {
+    grid-area: date;
+    text-align: right !important;
+  }
+
+  #slide-trace .dashboard-row>div:nth-child(2) {
+    grid-area: score1;
+    text-align: left !important;
+  }
+
+  #slide-trace .dashboard-row>div:nth-child(3) {
+    grid-area: score2;
+    text-align: center !important;
+  }
+
+  #slide-trace .dashboard-row>div:nth-child(4) {
+    grid-area: score3;
+    text-align: right !important;
+  }
+
+  /* Adjust font sizes */
+  #slide-trace .dashboard-row span {
+    font-size: 0.8rem !important;
+  }
+
 
   /* Slide 7 - Scenarios & Frise */
   .design-frise {
