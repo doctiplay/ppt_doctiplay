@@ -8051,3 +8051,62 @@ ul.clean li::before {
     /* Reduce battery drain/noise on mobile */
   }
 }
+/* ============================================================
+   MISSING MOBILE RESPONSIVE FIXES (ADDED DURING REVIEW)
+   ============================================================ */
+
+@media (max-width: 900px) {
+  /* Collapse Debrief Layout */
+  .debreif-layout {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+    padding: 20px 0 !important;
+  }
+  
+  .vertical-timeline-premium {
+    padding-left: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Collapse Dashboard Layout */
+  .dashboard-layout {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+  
+  .dash-main {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Collapse Process/Pilote Cards */
+  .next-step-cards {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important; /* Increased gap to accommodate spacing */
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+  }
+
+  /* Specific fix for the hidden content in Pilot cards */
+  .next-step-card {
+      min-height: auto; 
+  }
+}
+
+@media (max-width: 580px) {
+  .next-step-card {
+    padding: 24px 16px;
+  }
+  
+  .slide-content {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
