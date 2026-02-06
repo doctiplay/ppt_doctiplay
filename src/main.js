@@ -236,7 +236,7 @@ function initMonitor() {
       const hE = ecgCanvas.height;
       const midE = hE / 2 + 25;
       const hP = plethCanvas.height;
-      const midP = hP / 2 + 15;
+      const midP = hP / 2 + 5;
 
       const scanWidth = 14;
       if (scanX + scanWidth < ecgCanvas.width) {
@@ -248,7 +248,7 @@ function initMonitor() {
 
       // Draw ECG
       ctxE.beginPath();
-      ctxE.strokeStyle = '#00ff00';
+      ctxE.strokeStyle = '#00f2ff'; // Doctiplay Cyan
       ctxE.lineWidth = 1.5;
       const yE_prev = midE + getECG((scanX - speed) * scaleT);
       const yE_curr = midE + getECG(scanX * scaleT);
@@ -258,7 +258,7 @@ function initMonitor() {
 
       // Draw PLETH
       ctxP.beginPath();
-      ctxP.strokeStyle = '#00ffff';
+      ctxP.strokeStyle = '#4a90e2'; // Doctiplay Blue
       ctxP.lineWidth = 1.5;
       const yP_prev = midP + getPLETH((scanX - speed) * scaleT);
       const yP_curr = midP + getPLETH(scanX * scaleT);

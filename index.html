@@ -13,86 +13,8 @@
     rel="stylesheet">
   <link rel="stylesheet" href="src/style.css">
   <link rel="stylesheet" href="src/monitor.css">
-  <link rel="stylesheet" href="src/pillars-flow.css">
   <link rel="stylesheet" href="src/cockpit.css">
   <link rel="stylesheet" href="src/dashboard.css">
-  <style>
-    .cohort-row {
-      transition: all 0.2s ease;
-      cursor: pointer;
-    }
-
-    .cohort-row:hover {
-      background: rgba(255, 255, 255, 0.05) !important;
-      border-color: rgba(255, 255, 255, 0.1) !important;
-      transform: translateX(4px);
-    }
-
-    @media (max-width: 768px) {
-      .new-content-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 15px !important;
-        height: auto !important;
-      }
-
-      .new-content-grid>div {
-        width: 100% !important;
-        height: auto !important;
-        display: block !important;
-      }
-
-      .cohort-row {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        padding: 3px 8px !important;
-        gap: 0 !important;
-        align-items: flex-start !important;
-        justify-content: space-between !important;
-        min-height: unset !important;
-        font-size: 12px !important;
-        background: rgba(255, 255, 255, 0.01) !important;
-      }
-
-      .cohort-row>div:nth-child(1) {
-        order: 1;
-        flex: 1;
-        margin-bottom: 0;
-      }
-
-      .cohort-row>div:nth-child(2) {
-        order: 2;
-        width: auto;
-        text-align: right;
-        padding-right: 0 !important;
-      }
-
-      .cohort-row>div:nth-child(2) div[style*="flex-direction: column"] {
-        gap: 0 !important;
-      }
-
-      .cohort-row>div:nth-child(3) {
-        order: 3;
-        width: 100% !important;
-        margin-top: -6px !important;
-        padding-left: 32px !important;
-        opacity: 0.5 !important;
-        font-size: 10px !important;
-      }
-
-      .cohort-row div[style*="width: 24px"],
-      .cohort-row div[style*="width: 28px"] {
-        width: 24px !important;
-        height: 24px !important;
-        font-size: 0.65rem !important;
-      }
-
-      .cohort-list {
-        gap: 3px !important;
-        margin-top: 8px !important;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -112,13 +34,13 @@
     </a>
 
     <nav class="nav" aria-label="Navigation">
-      <a href="#slide-2">Défis</a>
-      <a href="#slide-3">Objectifs</a>
-      <a href="#slide-moteur">Technologie</a>
+      <a href="#slide-1">Accueil</a>
+      <a href="#slide-intro">Défis</a>
+      <a href="#slide-solution">Solution</a>
+      <a href="#slide-pharma">Technologie</a>
       <a href="#slide-5">Débrief</a>
       <a href="#slide-progression">Suivi</a>
       <a href="#slide-scenarios">Scénarios</a>
-
       <a href="#slide-implementation">Pilote</a>
     </nav>
 
@@ -160,7 +82,7 @@
           <div class="hero-text-col">
             <!-- H1 Title -->
             <h1 class="hero-h1 reveal">
-              Simulation clinique<br>interactive, en<br>conditions réelles.
+              Simulation clinique<br>interactive,&nbsp;en<br>conditions réelles.
             </h1>
 
             <!-- Subtitle -->
@@ -194,47 +116,106 @@
                 <span>Déploiement simple : 100% web, multi-postes</span>
               </div>
             </div>
-
           </div>
 
-          <!-- RIGHT COLUMN: Product Mockup - 3D Rotating iPad -->
-          <div class="hero-mockup-col reveal">
-            <div class="hero-mockup-wrapper">
-              <div class="hero-mockup-glow"></div>
-              <div class="ipad-3d-container">
-                <div class="ipad-3d-rotator">
-                  <!-- FRONT FACE: Doctiplay Screen -->
-                  <div class="ipad-face ipad-front">
-                    <div class="ipad-bezel">
-                      <div class="ipad-camera-front"></div>
-                      <div class="ipad-screen">
-                        <img src="doctiplay_screen_actual.png"
-                          alt="Interface Doctiplay - Simulateur clinique interactif">
+          <!-- RIGHT COLUMN: Simulation Preview Animation -->
+          <div class="hero-animation-col reveal">
+            <div class="simu-preview-wrapper">
+              <!-- Standalone Brand Logo Above Card -->
+              <div class="simu-brand-header-external">
+                <svg class="simu-logo-svg" viewBox="0 0 240 40" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Heartbeat Left -->
+                  <path d="M5 20 L20 20 L23 15 L27 25 L30 20 L40 20" fill="none" stroke="#00f2ff" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                  <!-- D + Play Icon -->
+                  <rect x="45" y="8" width="24" height="24" rx="4" fill="none" stroke="#00f2ff" stroke-width="2.5" />
+                  <path d="M53 14 L63 20 L53 26 Z" fill="#00f2ff" />
+                  <!-- Heartbeat Right -->
+                  <path d="M75 20 L85 20 L88 15 L92 25 L95 20 L110 20" fill="none" stroke="#00f2ff" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                  <!-- Text -->
+                  <text x="120" y="27" font-family="Inter, sans-serif" font-weight="900" font-size="20"
+                    fill="white">DOCTI</text>
+                  <text x="182" y="27" font-family="Inter, sans-serif" font-weight="900" font-size="20"
+                    fill="#00f2ff">PLAY</text>
+                </svg>
+              </div>
+              <!-- Back Cards for Depth -->
+              <div class="simu-card-base simu-card-back-2"></div>
+              <div class="simu-card-base simu-card-back-1"></div>
+
+              <!-- Main Simulation Card -->
+              <div class="simu-card-base simu-card-main">
+                <!-- Topbar -->
+                <div class="simu-card-topbar">
+                  <div class="simu-patient-name">PATIENT — Youssef El Amrani</div>
+                  <div class="simu-topbar-right">
+                    <span class="simu-status-tag">SECURE // ENCRYPTED</span>
+                    <span class="simu-time">10:45</span>
+                  </div>
+                </div>
+
+                <!-- Content Body -->
+                <div class="simu-card-body">
+                  <!-- Monitoring Section -->
+                  <div class="simu-monitoring">
+                    <div class="simu-monitor-grid"></div>
+                    <div class="simu-monitor-header">
+                      <span class="simu-monitor-label">MONITORING</span>
+                    </div>
+                    <div class="simu-monitor-main">
+                      <div class="simu-ecg-mini">
+                        <div class="simu-ecg-path"></div>
+                      </div>
+                      <div class="simu-vitals">
+                        <div class="simu-vital-item">
+                          <span class="vital-label">FC</span>
+                          <span class="vital-val">102</span>
+                        </div>
+                        <div class="simu-vital-item">
+                          <span class="vital-label">SpO₂</span>
+                          <span class="vital-val">94%</span>
+                        </div>
+                        <div class="simu-vital-item">
+                          <span class="vital-label">TA</span>
+                          <span class="vital-val">105/65</span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <!-- BACK FACE: iPad Pro Back Design -->
-                  <div class="ipad-face ipad-back">
-                    <div class="ipad-back-shell">
-                      <!-- Doctiplay Logo -->
-                      <div class="ipad-back-logo">
-                        <svg viewBox="0 0 120 40" fill="none" class="ipad-logo-icon">
-                          <path d="M5 20h15l3-10l5 20l4-15l3 5h10" stroke="#00f2ff" stroke-width="2.5"
-                            stroke-linecap="round" />
-                          <path d="M45 8h10c8 0 12 5 12 12s-4 12-12 12H45V8z" stroke="#00f2ff" stroke-width="2.5"
-                            stroke-linejoin="round" />
-                          <path d="M51 15l6 5l-6 5v-10z" fill="#00f2ff" />
-                          <path d="M70 20h10l3-10l5 20l4-15l3 5h15" stroke="#00f2ff" stroke-width="2.5"
-                            stroke-linecap="round" />
+
+                  <!-- SBAR Context -->
+                  <div class="simu-sbar">
+                    <p class="sbar-text">Douleur thoracique, dyspnée.</p>
+                    <span class="sbar-bold">Objectif : prioriser, traiter, sécuriser.</span>
+                  </div>
+
+                  <!-- Action Pills Grouped -->
+                  <div class="simu-actions">
+                    <div class="simu-actions-left">
+                      <div class="simu-pill">O₂</div>
+                      <div class="simu-pill">IV</div>
+                      <div class="simu-pill">Rx</div>
+                    </div>
+
+                    <div class="simu-actions-sep"></div>
+
+                    <div class="simu-actions-right">
+                      <div class="simu-mini-btn">
+                        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor"
+                          stroke-width="2.5">
+                          <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                         </svg>
-                        <span class="ipad-logo-text">DOCTI<span class="cyan">PLAY</span></span>
+                        APPEL
                       </div>
-                      <!-- Camera Module (iPad Pro style) -->
-                      <div class="ipad-camera-module">
-                        <div class="camera-lens camera-lens-main"></div>
-                        <div class="camera-lens camera-lens-ultra"></div>
-                        <div class="camera-flash"></div>
-                        <div class="camera-lidar"></div>
+                      <div class="simu-mini-btn">
+                        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor"
+                          stroke-width="2.5">
+                          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+                          <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
+                        </svg>
+                        ORDRES
                       </div>
                     </div>
                   </div>
@@ -245,138 +226,11 @@
         </div>
       </div>
 
-      <a href="#slide-hero-v3" class="scroll-arrow reveal" aria-label="Slide suivante">
+      <a href="#slide-intro" class="scroll-arrow reveal" aria-label="Slide suivante">
         <svg viewBox="0 0 24 24">
           <path d="M7 10l5 5 5-5" />
         </svg>
       </a>
-    </section>
-
-    <!-- Page 1 — V3 (Hero Demo) -->
-    <section id="slide-hero-v3" class="slide pitch-slide slide-hero-v3">
-      <!-- Premium Background Effects -->
-      <div class="hero-bg-effects">
-        <div class="hero-gradient"></div>
-        <div class="hero-noise"></div>
-        <div class="hero-ecg-pattern"></div>
-      </div>
-
-      <div class="safe">
-        <div class="hero-layout-v3">
-          <!-- LEFT COLUMN: Text Content (~45%) -->
-          <div class="hero-text-col">
-            <h1 class="hero-h1-v3 reveal">
-              Simulation clinique interactive,<br>en conditions réelles.
-            </h1>
-
-            <p class="hero-subtitle reveal">
-              Le patient parle. Vous agissez.<br>Les constantes évoluent en temps réel.
-            </p>
-
-            <!-- Numbered Chips -->
-            <div class="hero-chips-v3 reveal">
-              <div class="hero-chip-v3 reveal">
-                <span class="chip-num">01</span>
-                <span class="chip-label">Patient qui parle (voix/texte)</span>
-              </div>
-              <div class="hero-chip-v3 reveal">
-                <span class="chip-num">02</span>
-                <span class="chip-label">Constantes en temps réel</span>
-              </div>
-              <div class="hero-chip-v3 reveal">
-                <span class="chip-num">03</span>
-                <span class="chip-label">Débrief + traçabilité</span>
-              </div>
-            </div>
-
-            <a href="#slide-intro" class="hero-cta-v3 reveal">
-              Découvrir la présentation
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
-              </svg>
-            </a>
-          </div>
-
-          <!-- RIGHT COLUMN: Premium Simu-Frame (~55%) -->
-          <div class="hero-demo-col reveal">
-            <div class="demo-panel-v3 premium-simu-frame">
-              <div class="simu-grid-bg"></div>
-              <div class="simu-topbar">
-                <div class="topbar-left">
-                  <span class="patient-name">PATIENT — Youssef El Amrani</span>
-                  <span class="secure-label">SECURE CONNECTION // ENCRYPTED</span>
-                </div>
-                <div class="topbar-right">
-                  <div class="urgency-badge">NIVEAU D’URGENCE : CRITICAL</div>
-                  <span class="simu-time">10:45</span>
-                </div>
-              </div>
-              <div class="simu-main-grid">
-                <div class="panel-monitor-v3">
-                  <div class="monitor-top-v3">
-                    <span class="monitor-title-v3">MONITORING</span>
-                    <div class="monitor-live-v3">LIVE</div>
-                  </div>
-                  <div class="monitor-scope-v3">
-                    <svg viewBox="0 0 200 60" preserveAspectRatio="none" class="scope-svg-v3">
-                      <path class="scope-path-bg-v3" d="M0 30 L200 30" />
-                      <path class="scope-path-v3 animated-ecg"
-                        d="M0 30 L10 30 L15 10 L20 50 L25 30 L45 30 L50 10 L55 50 L60 30 L80 30 L85 10 L90 50 L95 30 L115 30 L120 10 L125 50 L130 30 L150 30 L155 10 L160 50 L165 30 L185 30 L190 10 L195 50 L200 30" />
-                    </svg>
-                  </div>
-                  <div class="monitor-vitals-v3">
-                    <div class="vital-item-v3">
-                      <span class="vital-name-v3">FC</span>
-                      <span class="vital-val-v3 cyan">82</span>
-                    </div>
-                    <div class="vital-item-v3">
-                      <span class="vital-name-v3">SpO2</span>
-                      <span class="vital-val-v3 blue">98</span>
-                    </div>
-                    <div class="vital-item-v3">
-                      <span class="vital-name-v3">TA</span>
-                      <span class="vital-val-v3">12/8</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="panel-sbar-v3">
-                  <div class="sbar-header-v3">RAPPORT DE SITUATION (SBAR)</div>
-                  <div class="sbar-content-v3">
-                    <div class="sbar-bubble patient-bubble">"J'ai une douleur thoracique, ça me lance..."</div>
-                    <div class="sbar-bubble staff-bubble staff-typing">"Où précisément ? Respire calmement."</div>
-                  </div>
-                  <div class="sbar-meta-v3">Facteurs de risque identifiés • Objectif : décision + coordination</div>
-                </div>
-              </div>
-              <div class="panel-actions-v3">
-                <div class="action-btns-v3">
-                  <div class="act-btn-v3">O₂</div>
-                  <div class="act-btn-v3 active">IV</div>
-                  <div class="act-btn-v3">Rx</div>
-                </div>
-                <div class="action-log-v3">Action prise : IV (Bolus 500ml)</div>
-                <div class="panel-footer-v3">
-                  <div class="score-group-v3">
-                    <span class="score-label-v3">SCORE</span>
-                    <span class="score-val-v3">85%</span>
-                  </div>
-                  <div class="progress-mini-v3">
-                    <div class="prog-fill-v3 anim-fill" style="width: 85%;"></div>
-                  </div>
-                  <div class="mini-check-v3">✓ Sécurisation airway</div>
-                </div>
-              </div>
-            </div>
-            <div class="panel-shadow-v3"></div>
-          </div>
-        </div>
-
-        <a href="#slide-intro" class="scroll-arrow reveal" aria-label="Slide suivante">
-          <svg viewBox="0 0 24 24">
-            <path d="M7 10l5 5 5-5" />
-          </svg>
-        </a>
-      </div>
     </section>
 
     <!-- SLIDE INTRO: LA SIMULATION DEVIENT LA NORME -->
@@ -394,240 +248,100 @@
 
       <div class="safe">
         <div class="intro-hero-content">
-          <h2 class="intro-hero-title reveal">La simulation devient la norme.</h2>
-          <p class="intro-hero-subtitle reveal">CESU, hôpitaux, IFSI : la demande d'entraînement structuré
-            s'accélère.
-          </p>
-          <p class="intro-hero-punch reveal">L'enjeu : rendre la <span class="accent-cyan">haute fidélité</span>
-            répétable, standardisée, et accessible.</p>
+          <h2 class="intro-hero-title reveal">Comment massifier l'accès à la simulation médicale dans un contexte de
+            ressources limitées ?</h2>
+          <p class="intro-hero-subtitle reveal">Dépendance aux plateaux techniques, disponibilité des formateurs,
+            difficulté à standardiser : un défi structurel.</p>
+          <p class="intro-hero-punch reveal">L’enjeu : une <span class="accent-cyan">haute fidélité</span> rejouable,
+            accessible, mesurable.</p>
         </div>
 
         <p class="intro-hero-footer reveal">Du mannequin au patient virtuel interactif.</p>
       </div>
 
-      <a href="#slide-2" class="scroll-arrow reveal" aria-label="Slide suivante">
+      <a href="#slide-solution" class="scroll-arrow reveal" aria-label="Slide suivante">
         <svg viewBox="0 0 24 24">
           <path d="M7 10l5 5 5-5" />
         </svg>
       </a>
     </section>
 
-
-    <!-- SLIDE 2: LES 4 CONTRAINTES TERRAIN -->
-    <section id="slide-2" class="slide pitch-slide slide-constraints">
+    <!-- SLIDE SOLUTION: LA SOLUTION DOCTIPLAY -->
+    <section id="slide-solution" class="slide pitch-slide slide-solution">
       <!-- Background Effects -->
-      <div class="constraints-bg">
-        <div class="constraints-ecg-pattern"></div>
-        <div class="constraints-gradient"></div>
-        <div class="constraints-noise"></div>
-        <div class="constraints-grid-glow"></div>
+      <div class="solution-bg">
+        <div class="solution-ecg-pattern"></div>
+        <div class="solution-gradient"></div>
+        <div class="solution-noise"></div>
       </div>
 
       <div class="safe">
-        <!-- Header -->
         <div class="slide-header">
-          <h2 class="reveal ultra-title">Des contraintes terrain</h2>
-          <p class="subtitle reveal">Former à l'urgence avec des contraintes fortes.</p>
-        </div>
+          <h1 class="reveal ultra-title">La solution : Doctiplay</h1>
+          <p class="subtitle reveal">Plateforme web de simulation clinique interactive (formation initiale & continue),
+            avec débrief mesurable.</p>
 
-        <!-- Main Grid: 4 Premium Tiles -->
-        <div class="constraints-grid reveal">
-          <!-- Tile 1: Exposition inégale -->
-          <div class="constraint-tile">
-            <div class="tile-glow"></div>
-            <div class="tile-content">
-              <span class="tile-keyword">
-                <svg class="tile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                  <circle cx="12" cy="12" r="3"></circle>
-                </svg>
-                Exposition inégale
-              </span>
-              <p class="tile-desc">Tout le monde ne voit pas les mêmes cas.</p>
-            </div>
-            <div class="tile-number">01</div>
-          </div>
-
-          <!-- Tile 2: Répétition limitée -->
-          <div class="constraint-tile">
-            <div class="tile-glow"></div>
-            <div class="tile-content">
-              <span class="tile-keyword">
-                <svg class="tile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M23 4v6h-6"></path>
-                  <path d="M1 20v-6h6"></path>
-                  <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
-                </svg>
-                Répétition limitée
-              </span>
-              <p class="tile-desc">S'entraîner souvent, sur le même référentiel, reste difficile.</p>
-            </div>
-            <div class="tile-number">02</div>
-          </div>
-
-          <!-- Tile 3: Charge logistique -->
-          <div class="constraint-tile">
-            <div class="tile-glow"></div>
-            <div class="tile-content">
-              <span class="tile-keyword">
-                <svg class="tile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-                Charge logistique
-              </span>
-              <p class="tile-desc">Préparer, jouer, débriefer mobilise beaucoup de temps formateur.</p>
-            </div>
-            <div class="tile-number">03</div>
-          </div>
-
-          <!-- Tile 4: Traçabilité fragile -->
-          <div class="constraint-tile">
-            <div class="tile-glow"></div>
-            <div class="tile-content">
-              <span class="tile-keyword">
-                <svg class="tile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M3 3v18h18"></path>
-                  <path d="M18 9l-5 5-4-4-3 3"></path>
-                </svg>
-                Traçabilité fragile
-              </span>
-              <p class="tile-desc">Évaluer, comparer et objectiver reste complexe.</p>
-            </div>
-            <div class="tile-number">04</div>
+          <div class="solution-chips reveal">
+            <span class="sol-chip">Formation initiale</span>
+            <span class="sol-chip">Formation continue</span>
           </div>
         </div>
 
-        <!-- Bridge Phrase -->
-        <p class="constraints-bridge reveal">Doctiplay répond à ces contraintes sans alourdir l'organisation.</p>
-      </div>
-
-      <a href="#slide-3" class="scroll-arrow reveal" aria-label="Slide suivante">
-        <svg viewBox="0 0 24 24">
-          <path d="M7 10l5 5 5-5" />
-        </svg>
-      </a>
-    </section>
-
-    <!-- SLIDE 3: 4 OBJECTIFS PÉDAGOGIQUES -->
-    <section id="slide-3" class="slide pitch-slide slide-objectives">
-      <!-- Background Effects -->
-      <div class="objectives-bg">
-        <div class="objectives-ecg-pattern"></div>
-        <div class="objectives-gradient"></div>
-        <div class="objectives-noise"></div>
-        <div class="objectives-grid-glow"></div>
-      </div>
-
-      <div class="safe">
-        <!-- Header -->
-        <div class="slide-header">
-          <h2 class="reveal ultra-title">3 piliers d'entraînement</h2>
-          <p class="subtitle reveal">Un entraînement standardisé pour sécuriser les pratiques.</p>
-        </div>
-
-        <!-- Horizontal Flow: 3 Pillars -->
-        <div class="pillars-flow reveal">
-
-          <!-- Pillar 1: Décider -->
-          <div class="pillar-card">
-            <div class="pillar-glow"></div>
-            <div class="pillar-header">
-              <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+        <div class="solution-grid reveal">
+          <!-- Card 1 -->
+          <div class="sol-card card-glass">
+            <div class="sol-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
               </svg>
-              <h3 class="pillar-title">Décider</h3>
             </div>
-            <p class="pillar-desc">ABCDE + diagnostic : prioriser, décider, réévaluer.</p>
-            <div class="pillar-chips">
-              <span>Raisonnement</span>
-              <span class="chip-dot">•</span>
-              <span>Hiérarchisation</span>
-              <span class="chip-dot">•</span>
-              <span>Décision rapide</span>
-            </div>
-            <div class="pillar-number">01</div>
+            <h3>Patient virtuel</h3>
+            <ul>
+              <li>Dialogue (voix / texte)</li>
+              <li>Symptômes + contexte</li>
+            </ul>
           </div>
-
-          <!-- Arrow -->
-          <div class="pillar-arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </div>
-
-          <!-- Pillar 2: Traiter (with micro-scope background) -->
-          <div class="pillar-card pillar-card-traiter">
-            <!-- Micro-scope animated background -->
-            <div class="micro-scope">
-              <div class="scope-wave scope-ecg">
-                <svg viewBox="0 0 400 60" preserveAspectRatio="none">
-                  <path class="ecg-path"
-                    d="M0,35 L20,35 L24,35 L28,10 L32,50 L36,35 L60,35 L120,35 L124,35 L128,10 L132,50 L136,35 L160,35 L220,35 L224,35 L228,10 L232,50 L236,35 L260,35 L320,35 L324,35 L328,10 L332,50 L336,35 L360,35 L400,35" />
-                </svg>
-              </div>
-              <div class="scope-wave scope-pleth">
-                <svg viewBox="0 0 400 60" preserveAspectRatio="none">
-                  <path class="pleth-path"
-                    d="M0,40 C20,40 40,10 60,10 C80,10 100,40 120,40 C140,40 160,10 180,10 C200,10 220,40 240,40 C260,40 280,10 300,10 C320,10 340,40 360,40 C380,40 400,10 420,10" />
-                </svg>
-              </div>
-            </div>
-
-            <div class="pillar-glow"></div>
-            <div class="pillar-header">
-              <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"></path>
-                <path d="M12 8v8"></path>
-                <path d="M8 12h8"></path>
+          <!-- Card 2 -->
+          <div class="sol-card card-glass">
+            <div class="sol-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
               </svg>
-              <h3 class="pillar-title">Traiter</h3>
             </div>
-            <p class="pillar-desc">Pharmaco : doses, titration, effets en temps réel.</p>
-            <div class="pillar-chips">
-              <span>Protocoles</span>
-              <span class="chip-dot">•</span>
-              <span>Ajustements</span>
-              <span class="chip-dot">•</span>
-              <span>Réponse patient</span>
-            </div>
-            <div class="pillar-number">02</div>
+            <h3>Moteur clinique</h3>
+            <ul>
+              <li>Physiologie en temps réel</li>
+              <li>Gestes / examens / traitements / médicaments (référentiel extensible)</li>
+            </ul>
           </div>
-
-          <!-- Arrow -->
-          <div class="pillar-arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </div>
-
-          <!-- Pillar 3: Sécuriser -->
-          <div class="pillar-card">
-            <div class="pillar-glow"></div>
-            <div class="pillar-header">
-              <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          <!-- Card 3 -->
+          <div class="sol-card card-glass">
+            <div class="sol-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M9 19v-6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2zm0 0V9a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v10m0 0a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v10">
+                </path>
               </svg>
-              <h3 class="pillar-title">Sécuriser</h3>
             </div>
-            <p class="pillar-desc">Surveillance + communication + débrief structuré.</p>
-            <div class="pillar-chips">
-              <span>Points critiques</span>
-              <span class="chip-dot">•</span>
-              <span>Traçabilité</span>
-              <span class="chip-dot">•</span>
-              <span>Feedback</span>
-            </div>
-            <div class="pillar-number">03</div>
+            <h3>Débrief & mesure</h3>
+            <ul>
+              <li>Timeline + scores</li>
+              <li>Exports PDF (promo / individuel)</li>
+            </ul>
           </div>
-
         </div>
 
-        <!-- Procedural Note (Premium) -->
-        <p class="pillars-procedural-note reveal">Les procédures sont abordées via checklists et séquences guidées
-          (pas
-          de dextérité manuelle).</p>
+        <div class="solution-result-bar reveal">
+          <span class="res-text">Complète le mannequin : plus de répétitions, plus de standardisation, sans alourdir la
+            logistique.</span>
+          <div class="res-badges">
+            <span class="res-badge">100% web</span>
+          </div>
+        </div>
+
+        <div class="rgpd-micro reveal">
+          Données fictives / pseudonymisées — conforme RGPD (selon configuration).
+        </div>
       </div>
 
       <a href="#slide-pharma" class="scroll-arrow reveal" aria-label="Slide suivante">
@@ -636,6 +350,8 @@
         </svg>
       </a>
     </section>
+
+
 
     <!-- SLIDE: AVANT / APRÈS - MOTEUR PHARMACODYNAMIQUE -->
     <section id="slide-pharma" class="slide pitch-slide slide-pharma">
@@ -2064,44 +1780,32 @@
       </div>
       <div class="safe">
 
-        <div class="slide-header"
-          style="flex-shrink: 0; margin-bottom: 40px; text-align: center; display: flex; flex-direction: column; align-items: center;">
-          <h2 class="reveal ultra-title" style="text-align: center; width: 100%; margin-bottom: 10px;">On en parle
-            ?
-          </h2>
-          <p class="subtitle reveal single-line" style="margin: 0; color: rgba(255,255,255,0.8);">Vos retours de
-            terrain
-            → on ajuste le bon format.</p>
+        <div class="next-step-header">
+          <h2 class="reveal ultra-title">On en parle ?</h2>
+          <p class="subtitle reveal single-line" style="color: rgba(255,255,255,0.8);">Vos retours de terrain → on
+            ajuste le bon format.</p>
         </div>
 
         <div class="slide-content"
           style="flex: 1; display: flex; flex-direction: column; justify-content: center; position: relative;">
-
           <!-- 3 Cartes Simples -->
-          <div class="reveal"
-            style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 60px;">
+          <div class="reveal next-step-cards">
             <!-- Card 1 -->
-            <div
-              style="background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 30px 20px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 15px; transition: transform 0.3s ease;">
-              <div
-                style="width: 50px; height: 50px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+            <div class="next-step-card">
+              <div class="next-step-icon-wrap">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                 </svg>
               </div>
               <div>
-                <h3 style="color: #fff; font-size: 1.2rem; font-weight: 700; margin: 0 0 8px 0;">Discussion</h3>
-                <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem; margin: 0; line-height: 1.4;">Vos
-                  retours en
-                  tant que professionnels de santé (médecins, cadres, chefs de service)</p>
+                <h3>Discussion</h3>
+                <p>Vos retours en tant que professionnels de santé (médecins, cadres, chefs de service)</p>
               </div>
             </div>
 
             <!-- Card 2 (Highlight) -->
-            <div
-              style="background: linear-gradient(135deg, rgba(0,242,255,0.1), rgba(4,9,21,0.5)); border: 1px solid var(--primary-cyan); border-radius: 16px; padding: 30px 20px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 15px; box-shadow: 0 0 30px rgba(0,242,255,0.15); transform: scale(1.05);">
-              <div
-                style="width: 50px; height: 50px; background: rgba(0,242,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+            <div class="next-step-card next-step-highlight">
+              <div class="next-step-icon-wrap">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-cyan)"
                   stroke-width="2">
                   <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
@@ -2110,20 +1814,14 @@
                 </svg>
               </div>
               <div>
-                <h3 style="color: var(--primary-cyan); font-size: 1.2rem; font-weight: 700; margin: 0 0 8px 0;">
-                  Démo
-                  guidée</h3>
-                <p
-                  style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin: 0; line-height: 1.4; font-weight: 600;">
-                  30 min + échanges (questions / cas d’usage)</p>
+                <h3>Démo guidée</h3>
+                <p>30 min + échanges (questions / cas d’usage)</p>
               </div>
             </div>
 
             <!-- Card 3 -->
-            <div
-              style="background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 30px 20px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 15px;">
-              <div
-                style="width: 50px; height: 50px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+            <div class="next-step-card">
+              <div class="next-step-icon-wrap">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                   <polyline points="14 2 14 8 20 8"></polyline>
@@ -2133,21 +1831,16 @@
                 </svg>
               </div>
               <div>
-                <h3 style="color: #fff; font-size: 1.2rem; font-weight: 700; margin: 0 0 8px 0;">Proposition</h3>
-                <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem; margin: 0; line-height: 1.4;">Format
-                  pilote /
-                  tests / scénarios (sur-mesure)</p>
+                <h3>Proposition</h3>
+                <p>Format pilote / tests / scénarios (sur-mesure)</p>
               </div>
             </div>
           </div>
 
           <!-- CTAs -->
-          <div class="reveal"
-            style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px;">
+          <div class="reveal next-step-ctas">
             <a href="mailto:w.smali@wersetech.com" class="btn-contact-classy">CONTACTEZ-NOUS</a>
-            <a href="#"
-              style="font-size: 0.85rem; color: rgba(255,255,255,0.6); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 2px; transition: color 0.3s;">Tester
-              le simulateur</a>
+            <a href="https://app.doctiplay.com" target="_blank" class="next-step-link">Tester le simulateur</a>
           </div>
 
         </div>

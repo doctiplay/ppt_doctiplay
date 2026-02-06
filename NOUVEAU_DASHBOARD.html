@@ -1,0 +1,262 @@
+<!-- NOUVELLE SECTION DASHBOARD À REMPLACER dans index.html à partir de la ligne 1033 -->
+<!-- Remplacer depuis "<div class="slide-content cockpit-layout reveal">" -->
+<!-- jusqu'à la fermeture "</div>" avant "<a href="#slide-scenarios"" -->
+
+<!-- Dashboard 2 Colonnes -->
+<div class="dashboard-2col reveal">
+
+    <!-- GAUCHE: Tableau de suivi -->
+    <div class="dashboard-main">
+        <!-- Carte Progression Groupe -->
+        <div class="progress-chart-card">
+            <div class="progress-header">
+                <h3>Progression du groupe</h3>
+                <span class="progress-period">30 derniers jours</span>
+            </div>
+            <div class="mini-chart">
+                <svg viewBox="0 0 300 50" preserveAspectRatio="none">
+                    <!-- Bars -->
+                    <rect x="10" y="30" width="12" height="20" fill="rgba(0,242,255,0.2)" rx="2" />
+                    <rect x="30" y="25" width="12" height="25" fill="rgba(0,242,255,0.25)" rx="2" />
+                    <rect x="50" y="20" width="12" height="30" fill="rgba(0,242,255,0.3)" rx="2" />
+                    <rect x="70" y="15" width="12" height="35" fill="rgba(0,242,255,0.35)" rx="2" />
+                    <rect x="90" y="12" width="12" height="38" fill="rgba(0,242,255,0.4)" rx="2" />
+                    <rect x="110" y="10" width="12" height="40" fill="rgba(0,242,255,0.45)" rx="2" />
+                    <rect x="130" y="8" width="12" height="42" fill="rgba(0,242,255,0.5)" rx="2" />
+                    <rect x="150" y="5" width="12" height="45" fill="rgba(0,242,255,0.55)" rx="2" />
+                    <!-- Trend line -->
+                    <polyline points="16,40 36,35 56,30 76,25 96,22 116,20 136,18 156,15" fill="none"
+                        stroke="var(--primary-cyan)" stroke-width="2" opacity="0.8" />
+                </svg>
+                <div class="chart-value">+18% <span>vs. mois précédent</span></div>
+            </div>
+        </div>
+
+        <!-- Table Card -->
+        <div class="table-card">
+            <div class="table-header-controls">
+                <h3>Tableau de suivi</h3>
+                <div class="table-filters">
+                    <button class="filter-chip">Groupe A <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg></button>
+                    <button class="filter-chip">30 derniers jours <svg viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg></button>
+                </div>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="table-search">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <input type="text" placeholder="Rechercher un apprenant…" readonly />
+            </div>
+
+            <!-- Table -->
+            <div class="data-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Apprenant</th>
+                            <th>Score</th>
+                            <th>Tendance</th>
+                            <th>Dernière session</th>
+                            <th>Durée</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="row-hover">
+                            <td>
+                                <div class="td-name"><span class="avatar-mini">AM</span>Alice M.</div>
+                            </td>
+                            <td><span class="score-value">9.0</span></td>
+                            <td><span class="trend positive"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polyline points="18 15 12 9 6 15"></polyline>
+                                    </svg>+12%</span></td>
+                            <td>Arrêt Card.</td>
+                            <td>15 min</td>
+                            <td><span class="status-badge ok">Actif</span></td>
+                        </tr>
+                        <tr class="row-hover">
+                            <td>
+                                <div class="td-name"><span class="avatar-mini">TB</span>Thomas B.</div>
+                            </td>
+                            <td><span class="score-value warn">6.0</span></td>
+                            <td><span class="trend negative"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>-15%</span></td>
+                            <td>PolyT</td>
+                            <td>22 min</td>
+                            <td><span class="status-badge warn">À relancer</span></td>
+                        </tr>
+                        <tr class="row-hover">
+                            <td>
+                                <div class="td-name"><span class="avatar-mini">SL</span>Sarah L.</div>
+                            </td>
+                            <td><span class="score-value">9.5</span></td>
+                            <td><span class="trend positive"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polyline points="18 15 12 9 6 15"></polyline>
+                                    </svg>+8%</span></td>
+                            <td>Acidocétose</td>
+                            <td>18 min</td>
+                            <td><span class="status-badge ok">Actif</span></td>
+                        </tr>
+                        <tr class="row-hover">
+                            <td>
+                                <div class="td-name"><span class="avatar-mini">MD</span>Marie D.</div>
+                            </td>
+                            <td><span class="score-value">7.2</span></td>
+                            <td><span class="trend neutral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>0%</span></td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td><span class="status-badge inactive">Inactif 15j</span></td>
+                        </tr>
+                        <tr class="row-hover">
+                            <td>
+                                <div class="td-name"><span class="avatar-mini">JD</span>Julie D.</div>
+                            </td>
+                            <td><span class="score-value warn">5.8</span></td>
+                            <td><span class="trend negative"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>-8%</span></td>
+                            <td>ACSOS</td>
+                            <td>19 min</td>
+                            <td><span class="status-badge warn">Erreurs</span></td>
+                        </tr>
+                        <tr class="row-hover">
+                            <td>
+                                <div class="td-name"><span class="avatar-mini">PL</span>Pierre L.</div>
+                            </td>
+                            <td><span class="score-value">8.5</span></td>
+                            <td><span class="trend positive"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polyline points="18 15 12 9 6 15"></polyline>
+                                    </svg>+5%</span></td>
+                            <td>Choc Sept.</td>
+                            <td>16 min</td>
+                            <td><span class="status-badge ok">Actif</span></td>
+                        </tr>
+                        <tr class="row-hover">
+                            <td>
+                                <div class="td-name"><span class="avatar-mini">LC</span>Léa C.</div>
+                            </td>
+                            <td><span class="score-value">9.2</span></td>
+                            <td><span class="trend positive"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polyline points="18 15 12 9 6 15"></polyline>
+                                    </svg>+10%</span></td>
+                            <td>PolyT</td>
+                            <td>20 min</td>
+                            <td><span class="status-badge ok">Actif</span></td>
+                        </tr>
+                        <tr class="row-hover">
+                            <td>
+                                <div class="td-name"><span class="avatar-mini">MR</span>Marc R.</div>
+                            </td>
+                            <td><span class="score-value">7.8</span></td>
+                            <td><span class="trend positive"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polyline points="18 15 12 9 6 15"></polyline>
+                                    </svg>+3%</span></td>
+                            <td>Arrêt Card.</td>
+                            <td>17 min</td>
+                            <td><span class="status-badge ok">Actif</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- DROITE: Insights -->
+    <div class="dashboard-sidebar">
+        <!-- Alertes -->
+        <div class="insight-card alert-card">
+            <div class="insight-header">
+                <div class="insight-title">
+                    <span class="alert-dot"></span>
+                    ALERTES
+                </div>
+                <span class="auto-tag">Auto</span>
+            </div>
+            <div class="alert-list">
+                <div class="alert-item">
+                    <div class="alert-info">
+                        <span class="avatar-tiny">TB</span>
+                        <div>
+                            <div class="alert-name">Thomas B.</div>
+                            <div class="alert-reason">Baisse score -15%</div>
+                        </div>
+                    </div>
+                    <button class="alert-btn red">Relancer</button>
+                </div>
+                <div class="alert-item">
+                    <div class="alert-info">
+                        <span class="avatar-tiny">MD</span>
+                        <div>
+                            <div class="alert-name">Marie D.</div>
+                            <div class="alert-reason">Inactif > 15j</div>
+                        </div>
+                    </div>
+                    <button class="alert-btn">Voir</button>
+                </div>
+                <div class="alert-item">
+                    <div class="alert-info">
+                        <span class="avatar-tiny">JD</span>
+                        <div>
+                            <div class="alert-name">Julie D.</div>
+                            <div class="alert-reason">Erreurs récurrentes</div>
+                        </div>
+                    </div>
+                    <button class="alert-btn red">Relancer</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Plan d'action -->
+        <div class="insight-card action-card">
+            <div class="insight-header">
+                <div class="insight-title blue">PLAN D'ACTION (SEMAINE)</div>
+            </div>
+            <div class="action-list">
+                <div class="action-item">
+                    <span class="action-dot"></span>
+                    <span>Débrief surveillance (groupe : 6.2)</span>
+                </div>
+                <div class="action-item">
+                    <span class="action-dot"></span>
+                    <span>Session rattrapage : Sécurité</span>
+                </div>
+                <div class="action-item">
+                    <span class="action-dot"></span>
+                    <span>Exporter rapport mensuel</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Export -->
+        <button class="export-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="12" y1="18" x2="12" y2="12"></line>
+                <polyline points="9 15 12 18 15 15"></polyline>
+            </svg>
+            <span>Exporter rapport PDF</span>
+        </button>
+    </div>
+
+</div>

@@ -158,13 +158,24 @@ canvas {
 }
 
 .cyan-text {
-    color: #0ff;
-    text-shadow: 0 0 5px rgba(0, 255, 255, 0.4);
+    color: var(--primary-cyan);
+    text-shadow: 0 0 5px rgba(0, 242, 255, 0.4);
+}
+
+.blue-text {
+    color: #4a90e2;
+    /* Standard Doctiplay Blue */
+    text-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
+}
+
+.white-text {
+    color: #ffffff;
+    opacity: 0.9;
 }
 
 .red-text {
-    color: #f33;
-    text-shadow: 0 0 5px rgba(255, 50, 50, 0.4);
+    color: #ff5555;
+    text-shadow: 0 0 5px rgba(255, 85, 85, 0.4);
 }
 
 /* Actions */
