@@ -35,7 +35,7 @@ function init() {
   revealElements.forEach(el => observer.observe(el));
 
   // Force first slide reveal immediately
-  const firstSlideReveals = document.querySelectorAll('#slide-1 .reveal');
+  const firstSlideReveals = document.querySelectorAll('#slide-intro .reveal');
   firstSlideReveals.forEach(el => {
     el.classList.add('active');
   });

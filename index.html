@@ -34,8 +34,8 @@
     </a>
 
     <nav class="nav" aria-label="Navigation">
-      <a href="#slide-1">Accueil</a>
-      <a href="#slide-intro">Défis</a>
+      <a href="#slide-intro">Accueil</a>
+      <a href="#slide-1">Défis</a>
       <a href="#slide-solution">Solution</a>
       <a href="#slide-pharma">Technologie</a>
       <a href="#slide-5">Débrief</a>
@@ -67,6 +67,44 @@
 
   <div class="snap-container" id="main">
 
+    <!-- SLIDE INTRO: LA SIMULATION DEVIENT LA NORME -->
+    <section id="slide-intro" class="slide pitch-slide slide-intro-hero">
+      <!-- Background Image -->
+      <div class="intro-hero-bg">
+        <img src="/simulation-hero.png" alt="Mannequin de simulation haute fidélité" />
+        <div class="intro-hero-overlay"></div>
+        <div class="intro-hero-vignette"></div>
+        <div class="intro-hero-ecg"></div>
+        <div class="intro-hero-noise"></div>
+        <div class="intro-hero-glow"></div>
+        <div class="intro-hero-text-gradient"></div>
+      </div>
+
+      <div class="safe">
+        <div class="intro-hero-content">
+          <h2 class="intro-hero-title reveal">Aujourd'hui, <span style="color: var(--primary-cyan);">impossible</span>
+            de
+            s'entraîner
+            suffisamment
+          </h2>
+          <p class="intro-hero-subtitle reveal" style="text-align: center;">Accès limité aux simulateurs, créneaux
+            rares, peu de répétitions : la
+            courbe d'apprentissage dépend du hasard.</p>
+          <p class="intro-hero-punch reveal">L’enjeu : <span
+              style="color: var(--primary-cyan); font-size: 22px;">transformer chaque
+              erreur en apprentissage</span>, sans risque pour le patient.</p>
+        </div>
+
+        <p class="intro-hero-footer reveal">Du mannequin au patient virtuel interactif.</p>
+      </div>
+
+      <a href="#slide-1" class="scroll-arrow reveal" aria-label="Slide suivante">
+        <svg viewBox="0 0 24 24">
+          <path d="M7 10l5 5 5-5" />
+        </svg>
+      </a>
+    </section>
+
     <!-- SLIDE 1: COVER - Premium Hero -->
     <section id="slide-1" class="slide pitch-slide slide-hero">
       <!-- Premium Background Effects -->
@@ -82,12 +120,13 @@
           <div class="hero-text-col">
             <!-- H1 Title -->
             <h1 class="hero-h1 reveal">
-              Et s'il était possible de gérer 20 arrêts cardiaques...<br>avant d'en voir un vrai ?
+              <span style="color: var(--primary-cyan);">20 arrêts cardiaques</span> maîtrisés avant le premier vrai
             </h1>
 
             <!-- Subtitle -->
             <p class="hero-subtitle reveal">
-              Répéter sans limites, avant que ça compte vraiment.
+              Répéter jusqu'à la perfection, <span style="color: var(--primary-cyan);">avant que ça compte
+                vraiment</span>.
             </p>
 
             <!-- Feature Chips -->
@@ -96,7 +135,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
                 </svg>
-                <span>Haute fidélité : constantes en temps réel</span>
+                <span>Haute fidélité : physiologie en temps réel</span>
               </div>
               <div class="hero-chip">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -105,7 +144,7 @@
                   <line x1="16" y1="13" x2="8" y2="13"></line>
                   <line x1="16" y1="17" x2="8" y2="17"></line>
                 </svg>
-                <span>Débrief & traçabilité : timeline, actions, scores</span>
+                <span>Débrief mesurable : timeline, actions, scores</span>
               </div>
               <div class="hero-chip">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -246,39 +285,6 @@
         </div>
       </div>
 
-      <a href="#slide-intro" class="scroll-arrow reveal" aria-label="Slide suivante">
-        <svg viewBox="0 0 24 24">
-          <path d="M7 10l5 5 5-5" />
-        </svg>
-      </a>
-    </section>
-
-    <!-- SLIDE INTRO: LA SIMULATION DEVIENT LA NORME -->
-    <section id="slide-intro" class="slide pitch-slide slide-intro-hero">
-      <!-- Background Image -->
-      <div class="intro-hero-bg">
-        <img src="/simulation-hero.png" alt="Mannequin de simulation haute fidélité" />
-        <div class="intro-hero-overlay"></div>
-        <div class="intro-hero-vignette"></div>
-        <div class="intro-hero-ecg"></div>
-        <div class="intro-hero-noise"></div>
-        <div class="intro-hero-glow"></div>
-        <div class="intro-hero-text-gradient"></div>
-      </div>
-
-      <div class="safe">
-        <div class="intro-hero-content">
-          <h2 class="intro-hero-title reveal">Mais aujourd'hui, impossible de s'entraîner suffisamment
-          </h2>
-          <p class="intro-hero-subtitle reveal">Accès limité aux simulateurs, créneaux rares, peu de répétitions : la
-            courbe d'apprentissage dépend du hasard.</p>
-          <p class="intro-hero-punch reveal">L’enjeu : une <span class="accent-cyan">haute fidélité</span> rejouable,
-            accessible, mesurable.</p>
-        </div>
-
-        <p class="intro-hero-footer reveal">Du mannequin au patient virtuel interactif.</p>
-      </div>
-
       <a href="#slide-solution" class="scroll-arrow reveal" aria-label="Slide suivante">
         <svg viewBox="0 0 24 24">
           <path d="M7 10l5 5 5-5" />
@@ -293,6 +299,7 @@
         <div class="solution-ecg-pattern"></div>
         <div class="solution-gradient"></div>
         <div class="solution-noise"></div>
+        <img src="/doctiplay_screen_actual.png" class="solution-bg-screenshot" alt="Doctiplay Debrief UI" />
       </div>
 
       <div class="safe">

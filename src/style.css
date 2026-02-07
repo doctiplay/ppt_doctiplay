@@ -1816,11 +1816,10 @@ ul.clean li::before {
 .intro-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg,
-      rgba(10, 15, 20, 0.97) 0%,
-      rgba(10, 15, 20, 0.92) 25%,
-      rgba(10, 15, 20, 0.7) 55%,
-      rgba(10, 15, 20, 0.5) 100%);
+  background: linear-gradient(to right,
+      rgba(0, 20, 40, 0.95) 0%,
+      rgba(0, 20, 40, 0.6) 60%,
+      rgba(0, 20, 40, 0.3) 100%);
 }
 
 /* Vignette latérale premium */
@@ -1904,20 +1903,62 @@ ul.clean li::before {
   position: relative;
   z-index: 2;
   transform: translateY(9px) translateX(5px) scale(0.98);
-  max-width: 850px;
+  max-width: 950px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
   padding-top: 50px;
+  padding-left: 40px;
+  /* Space for the vertical bar */
+}
+
+/* Vertical Cyan Bar */
+.intro-hero-content::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 60px;
+  /* Adjust based on optical alignment with title */
+  width: 4px;
+  height: 180px;
+  background: var(--primary-cyan);
+  transform-origin: bottom;
+  animation: growBar 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes growBar {
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
+  }
 }
 
 .intro-hero-title {
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-size: clamp(3rem, 5vw, 85px);
   font-weight: 900;
   color: #fff;
   letter-spacing: -0.02em;
   margin: 0 0 18px 0;
   line-height: 1.1;
   text-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+
+  /* Animation */
+  opacity: 0;
+  animation: slideInLeft 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .intro-hero-subtitle {
@@ -1926,6 +1967,10 @@ ul.clean li::before {
   font-weight: 400;
   margin: 0 0 24px 0;
   line-height: 1.5;
+
+  /* Animation */
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.3s forwards;
 }
 
 .intro-hero-punch {
@@ -1934,6 +1979,20 @@ ul.clean li::before {
   color: rgba(255, 255, 255, 0.9);
   margin: 0;
   line-height: 1.5;
+
+  /* Animation */
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .intro-hero-punch .accent-cyan {
@@ -8051,37 +8110,40 @@ ul.clean li::before {
     /* Reduce battery drain/noise on mobile */
   }
 }
+
 /* ============================================================
    MISSING MOBILE RESPONSIVE FIXES (ADDED DURING REVIEW)
    ============================================================ */
 
 @media (max-width: 900px) {
+
   /* Collapse Debrief Layout */
   .debreif-layout {
     grid-template-columns: 1fr !important;
     gap: 30px !important;
     padding: 20px 0 !important;
   }
-  
+
   .vertical-timeline-premium {
     padding-left: 10px;
     margin-bottom: 20px;
   }
-  
+
   /* Collapse Dashboard Layout */
   .dashboard-layout {
     grid-template-columns: 1fr !important;
     gap: 30px !important;
   }
-  
+
   .dash-main {
     grid-template-columns: 1fr !important;
   }
-  
+
   /* Collapse Process/Pilote Cards */
   .next-step-cards {
     grid-template-columns: 1fr !important;
-    gap: 40px !important; /* Increased gap to accommodate spacing */
+    gap: 40px !important;
+    /* Increased gap to accommodate spacing */
     max-width: 400px;
     margin-left: auto;
     margin-right: auto;
@@ -8090,7 +8152,7 @@ ul.clean li::before {
 
   /* Specific fix for the hidden content in Pilot cards */
   .next-step-card {
-      min-height: auto; 
+    min-height: auto;
   }
 }
 
@@ -8098,7 +8160,7 @@ ul.clean li::before {
   .next-step-card {
     padding: 24px 16px;
   }
-  
+
   .slide-content {
     width: 100%;
     padding: 0 10px;
@@ -8108,5 +8170,33 @@ ul.clean li::before {
 @media (max-width: 900px) {
   .hide-on-mobile {
     display: none !important;
+  }
+}
+/* --- Ghost Interface Background for Slide Solution --- */
+.solution-bg-screenshot {
+  position: absolute;
+  top: 15%;
+  right: -8%;
+  width: 65%;
+  max-width: 1000px;
+  height: auto;
+  opacity: 0.12; /* Subtle visibility */
+  filter: blur(2px) grayscale(30%);
+  transform: perspective(1500px) rotateY(-12deg) rotateX(4deg);
+  border-radius: 12px;
+  box-shadow: -30px 40px 80px rgba(0,0,0,0.6);
+  pointer-events: none;
+  z-index: 1; /* Above gradient base but below content */
+  mix-blend-mode: soft-light; /* Blend with background */
+  transition: all 0.8s ease-out;
+}
+
+/* Make it subtle on mobile or hide if too cluttered */
+@media (max-width: 1000px) {
+  .solution-bg-screenshot {
+    opacity: 0.08;
+    right: -25%;
+    width: 90%;
+    filter: blur(3px);
   }
 }
