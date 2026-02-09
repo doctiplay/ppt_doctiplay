@@ -107,6 +107,8 @@
   body {
     height: auto !important;
     overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
   .snap-container {
@@ -122,6 +124,7 @@
     background: var(--bg-dark) !important;
   }
 
+  /* Hide UI elements */
   .topbar,
   .progress-bar,
   .scroll-arrow,
@@ -132,25 +135,36 @@
     display: none !important;
   }
 
+  /* Force each section onto its own page */
   section,
   .slide,
   .pitch-slide {
-    height: 100vh !important;
-    width: 100vw !important;
+    height: 9in !important;
+    /* Force exact 16:9 height */
+    width: 16in !important;
+    /* Force exact 16:9 width */
     overflow: hidden !important;
-    break-after: page !important;
-    page-break-after: always !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
     padding: 0 !important;
     margin: 0 !important;
+    page-break-after: always !important;
+    break-after: page !important;
     position: relative !important;
     opacity: 1 !important;
     visibility: visible !important;
+    float: none !important;
   }
 
+  /* Ensure background colors and gradients show up */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Bypass all reveal animations */
   .reveal {
     opacity: 1 !important;
     transform: none !important;
@@ -160,10 +174,9 @@
 
   .safe {
     padding: 60px !important;
-    /* Global Print Safe Zone */
-    max-width: var(--maxw) !important;
     width: 100% !important;
     height: 100% !important;
+    max-width: var(--maxw) !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
