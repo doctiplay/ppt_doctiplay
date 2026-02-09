@@ -103,6 +103,21 @@
     margin: 0;
   }
 
+  html,
+  body {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .snap-container {
+    overflow: visible !important;
+    height: auto !important;
+    width: 100% !important;
+    scroll-snap-type: none !important;
+    position: static !important;
+    display: block !important;
+  }
+
   body {
     background: var(--bg-dark) !important;
   }
@@ -112,12 +127,14 @@
   .scroll-arrow,
   .btn-top,
   .top-actions,
-  .nav {
+  .nav,
+  .nav-dots {
     display: none !important;
   }
 
   section,
-  .slide {
+  .slide,
+  .pitch-slide {
     height: 100vh !important;
     width: 100vw !important;
     overflow: hidden !important;
@@ -128,19 +145,42 @@
     align-items: center !important;
     justify-content: center !important;
     padding: 0 !important;
+    margin: 0 !important;
+    position: relative !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+    transition: none !important;
   }
 
   .safe {
-    padding: 48px !important;
+    padding: 60px !important;
     /* Global Print Safe Zone */
-    max-width: none !important;
+    max-width: var(--maxw) !important;
     width: 100% !important;
     height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
   }
 
   /* Specific adjustment for hero mockup in print */
   .hero-product-wrap {
-    transform: scale(0.95) !important;
+    transform: scale(0.9) !important;
+  }
+
+  /* Ensure child containers are visible if they have internal scroll */
+  .slide-content,
+  .card-grid,
+  .next-step-cards,
+  .inner-scroll {
+    overflow: visible !important;
+    height: auto !important;
   }
 
   section::after,
@@ -8172,6 +8212,7 @@ ul.clean li::before {
     display: none !important;
   }
 }
+
 /* --- Ghost Interface Background for Slide Solution --- */
 .solution-bg-screenshot {
   position: absolute;
@@ -8180,14 +8221,17 @@ ul.clean li::before {
   width: 65%;
   max-width: 1000px;
   height: auto;
-  opacity: 0.12; /* Subtle visibility */
+  opacity: 0.12;
+  /* Subtle visibility */
   filter: blur(2px) grayscale(30%);
   transform: perspective(1500px) rotateY(-12deg) rotateX(4deg);
   border-radius: 12px;
-  box-shadow: -30px 40px 80px rgba(0,0,0,0.6);
+  box-shadow: -30px 40px 80px rgba(0, 0, 0, 0.6);
   pointer-events: none;
-  z-index: 1; /* Above gradient base but below content */
-  mix-blend-mode: soft-light; /* Blend with background */
+  z-index: 1;
+  /* Above gradient base but below content */
+  mix-blend-mode: soft-light;
+  /* Blend with background */
   transition: all 0.8s ease-out;
 }
 

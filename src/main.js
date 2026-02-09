@@ -52,20 +52,23 @@ function init() {
     });
   });
 
-  // PDF Export Bubble logic
+  // PDF Export logic
   const pdfBtn = document.getElementById('pdf-export-btn');
   if (pdfBtn) {
     const bubble = document.createElement('div');
     bubble.className = 'pdf-bubble';
-    bubble.innerText = 'Le mode PDF est en cours de mise-à-jour';
+    bubble.innerHTML = 'Préparation du PDF...<br><span style="font-size: 0.7rem; opacity: 0.7;">Format 16:9 recommandé</span>';
     pdfBtn.parentElement.appendChild(bubble);
 
     pdfBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       bubble.classList.add('show');
+
+      // Delay print slightly to allow bubble to show/UI to settle
       setTimeout(() => {
         bubble.classList.remove('show');
-      }, 3000);
+        window.print();
+      }, 1000);
     });
 
     document.addEventListener('click', () => {
