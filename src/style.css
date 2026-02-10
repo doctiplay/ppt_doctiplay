@@ -2411,9 +2411,9 @@ ul.clean li::before {
 
 .sol-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  backdrop-filter: none;
+  border: none;
   border-radius: 16px;
   padding: 30px 25px;
   display: flex;
@@ -2421,14 +2421,15 @@ ul.clean li::before {
   gap: 12px;
   height: 100%;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .sol-card:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(0, 242, 255, 0.4);
+  background: transparent;
+  border-color: transparent;
   transform: translateY(-8px);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 242, 255, 0.05);
+  box-shadow: none;
 }
 
 .sol-icon {
@@ -8172,6 +8173,7 @@ ul.clean li::before {
     display: none !important;
   }
 }
+
 /* --- Ghost Interface Background for Slide Solution --- */
 .solution-bg-screenshot {
   position: absolute;
@@ -8180,14 +8182,17 @@ ul.clean li::before {
   width: 65%;
   max-width: 1000px;
   height: auto;
-  opacity: 0.12; /* Subtle visibility */
+  opacity: 0.12;
+  /* Subtle visibility */
   filter: blur(2px) grayscale(30%);
   transform: perspective(1500px) rotateY(-12deg) rotateX(4deg);
   border-radius: 12px;
-  box-shadow: -30px 40px 80px rgba(0,0,0,0.6);
+  box-shadow: -30px 40px 80px rgba(0, 0, 0, 0.6);
   pointer-events: none;
-  z-index: 1; /* Above gradient base but below content */
-  mix-blend-mode: soft-light; /* Blend with background */
+  z-index: 1;
+  /* Above gradient base but below content */
+  mix-blend-mode: soft-light;
+  /* Blend with background */
   transition: all 0.8s ease-out;
 }
 

@@ -259,7 +259,7 @@
 /* Table Header */
 .cockpit-table-header {
     display: grid;
-    grid-template-columns: 1.8fr 0.9fr 1.2fr 1.1fr;
+    grid-template-columns: 60px 1fr 1.4fr 1.2fr;
     gap: 12px;
     padding: 10px 14px;
     background: rgba(0, 242, 255, 0.03);
@@ -288,7 +288,7 @@
 
 .cockpit-row {
     display: grid;
-    grid-template-columns: 1.8fr 0.9fr 1.2fr 1.1fr;
+    grid-template-columns: 60px 1fr 1.4fr 1.2fr;
     gap: 12px;
     padding: 12px 14px;
     background: rgba(255, 255, 255, 0.015);
@@ -310,7 +310,8 @@
 .col-apprenant {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    gap: 0;
 }
 
 .row-avatar {
